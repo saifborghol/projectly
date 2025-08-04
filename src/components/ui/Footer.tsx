@@ -123,7 +123,6 @@ export default function Footer() {
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  border: "1px solid red",
                   borderRadius: "50px",
                   border:
                     "2px solid var(--color-white-15, rgba(255, 255, 255, 0.15))",
