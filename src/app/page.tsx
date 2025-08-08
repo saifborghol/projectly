@@ -1,14 +1,15 @@
-
 import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/ui/Hero";
+import AboutUs from "@/components/ui/aboutUs";
 import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <main>
       <Navbar />
       <Hero />
+      <AboutUs />
       <Footer />
-    </div>
+    </main>
   );
 }
