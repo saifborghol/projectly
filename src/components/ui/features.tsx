@@ -137,11 +137,11 @@ const RadialSwiper: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative w-full  bg-gradient-to-br from-gray-900 via-black  pt-24 overflow-hidden">
+    <div className="relative w-full h-full bg-gradient-to-br from-gray-900 via-black  pt-24 overflow-hidden">
       {/* Main radial container */}
       <div
         ref={containerRef}
-        className="flex items-center justify-center h-full cursor-grab active:cursor-grabbing"
+        className="flex items-center justify-center  cursor-grab active:cursor-grabbing"
       >
         <div className="relative w-full h-[750px] z-10">
           {appIcons.map((app: AppIcon, index: number) => {
@@ -228,9 +228,9 @@ const RadialSwiper: React.FC = () => {
         </div>
 
         {/* Central content */}
-        <div className="absolute  flex flex-col items-center justify-center z-[100] cursor-auto  select-text">
+        <div className="absolute  flex flex-col items-center justify-center z-[100] cursor-auto  select-text  mt-[-250px]">
           {/* Feature badge */}
-          <button className="button">
+          <button className="button mb-6">
             <div className="dots_border"></div>
             <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
               <Image src="/icons/flam.png" alt="flam" width={18} height={18} />
@@ -261,6 +261,249 @@ const RadialSwiper: React.FC = () => {
             >
               Book an Appointment
             </Link>
+          </motion.div>
+        </div>
+      </div>
+      {/* Three Feature Cards */}
+      <div
+        style={{
+          marginTop: "-300px",
+          padding: "50px",
+          width: "max-content",
+          borderRadius: "8px",
+          justifySelf: "center",
+          borderWidth: "2px ",
+          borderStyle: "solid",
+          borderImage:
+            "linear-gradient(to right, transparent, #ffffff18, transparent) 1",
+          borderImageSlice: 1,
+        }}
+      >
+        <div className="flex gap-6 w-full justify-center">
+          {/* Card 1: Scalable Architecture */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "540px",
+              width: "380px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-white text-xl font-semibold mb-3 text-center">
+                Scalable
+                <br />
+                Architecture
+              </h3>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed text-center">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "233px",
+                width: "100%",
+                background:
+                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f,  #300a5c)",
+              }}
+              className="rounded-xl p-4 h-32 flex items-center justify-center"
+            >
+              <Image
+                src="/background/bg-block-card-1.png"
+                alt="bg Icon"
+                width={310}
+                height={300}
+              />
+            </div>
+          </motion.div>
+
+          {/* Card 2: Seamless Cross-Platform Delivery */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "540px",
+              width: "380px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-white text-xl font-semibold mb-3 text-center">
+                Seemless
+                <br />
+                Cross-Platform Delivery
+              </h3>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed text-center">
+              Web, mobile, and cloud — unified under one experience..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "233px",
+                width: "100%",
+                background:
+                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f,  #300a5c)",
+              }}
+              className="rounded-xl p-4 h-32 flex items-center justify-center"
+            >
+              <Image
+                src="/background/bg-block-card-2.png"
+                alt="bg Icon"
+                width={74}
+                height={74}
+              />
+            </div>
+          </motion.div>
+
+          {/* Card 3: AI Chatbot Assistant */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "540px",
+              width: "380px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-white text-xl font-semibold mb-3 text-center">
+                AI Chatbot
+                <br />
+                Assistant
+              </h3>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed text-center">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "233px",
+                width: "100%",
+                background:
+                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f,  #300a5c)",
+              }}
+              className="rounded-xl p-4 h-32 flex flex-col items-center justify-center"
+            >
+               <Image
+                src="/background/bg-block-card-3-1.png"
+                alt="bg Icon"
+                width={90}
+                height={74}
+                className="mb-4"
+              />
+              <Image
+                src="/background/bg-block-card-3.png"
+                alt="bg Icon"
+                width={200}
+                height={74}
+              />
+            </div>
           </motion.div>
         </div>
       </div>
