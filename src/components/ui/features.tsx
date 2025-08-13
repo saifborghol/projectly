@@ -278,8 +278,9 @@ const RadialSwiper: React.FC = () => {
             "linear-gradient(to right, transparent, #ffffff18, transparent) 1",
           borderImageSlice: 1,
         }}
+        className="mx-4 md:mx-8"
       >
-        <div className="flex gap-6 w-full justify-center">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-6 w-full justify-center items-center lg:items-stretch">
           {/* Card 1: Scalable Architecture */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -490,7 +491,7 @@ const RadialSwiper: React.FC = () => {
               }}
               className="rounded-xl p-4 h-32 flex flex-col items-center justify-center"
             >
-               <Image
+              <Image
                 src="/background/bg-block-card-3-1.png"
                 alt="bg Icon"
                 width={90}
@@ -505,6 +506,138 @@ const RadialSwiper: React.FC = () => {
               />
             </div>
           </motion.div>
+        </div>
+        {/* Additional Features Block */}
+        <div
+          style={{
+            width: "100%",
+            borderWidth: "0.5px",
+            borderStyle: "solid",
+            borderImage:
+              "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+            borderImageSlice: 1,
+            marginTop: "35px",
+          }}
+        />
+        <div className="  border-gray-700/30 p-8 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Fast Deployment */}
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-white font-normal text-lg">
+                  Fast Deployment
+                </h3>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Rapid development cycles with <br /> CI/CD.
+              </p>
+            </div>
+
+            {/* Security First */}
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-white font-normal text-lg">
+                  Security First
+                </h3>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                End-to-end encryption & best <br />
+                practices.
+              </p>
+            </div>
+
+            {/* Optimized UX/UI */}
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-white font-normal text-lg">
+                  Optimized UX/UI
+                </h3>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Smart design that enhances user <br />
+                experience.
+              </p>
+            </div>
+
+            {/* Custom Integrations */}
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-white font-normal text-lg">
+                  Custom Integrations
+                </h3>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Tailored APIs and third-party
+                <br /> syncs.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
