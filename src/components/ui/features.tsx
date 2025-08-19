@@ -137,7 +137,7 @@ const RadialSwiper: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-gray-900 via-black  pt-24 overflow-hidden">
+    <div className="relative w-full h-full  pt-24 overflow-hidden">
       {/* Main radial container */}
       <div
         ref={containerRef}
@@ -272,7 +272,7 @@ const RadialSwiper: React.FC = () => {
           width: "max-content",
           borderRadius: "8px",
           justifySelf: "center",
-          borderWidth: "2px ",
+          borderTopWidth: "2px ",
           borderStyle: "solid",
           borderImage:
             "linear-gradient(to right, transparent, #ffffff18, transparent) 1",
