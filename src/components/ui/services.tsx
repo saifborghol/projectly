@@ -8,11 +8,11 @@ export default function Services() {
   return (
     <section className=" relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
-        className="w-fit bg-[#302a2a]  px-24 py-20 rounded-[8px]"
+        className="w-fit bg-[#080808]  px-24 py-20 rounded-[8px]"
         style={{
           backgroundImage:
             "url('./background/bg-services.png'), url('./background/bg-service-2.png')",
-          backgroundSize: "cover, cover",
+          backgroundSize: "cover,70%",
           backgroundPosition: "center, top",
           backgroundRepeat: "no-repeat, no-repeat",
         }}
@@ -55,7 +55,9 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-l text-gray-400 mb-12 text-center max-w-lg leading-relaxed pointer-events-none"
           >
-            From code to strategy, we deliver future-ready digital solutions that<br />
+            From code to strategy, we deliver future-ready digital solutions
+            that
+            <br />
             drive performance, elevate brands, and empower growth.
           </motion.p>
 
