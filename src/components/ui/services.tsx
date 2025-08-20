@@ -6,9 +6,9 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <section className=" relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
-        className="w-fit bg-[#080808]  px-24 py-20 rounded-[8px]"
+        className=" bg-[#080808] py-20 rounded-[8px]"
         style={{
           backgroundImage:
             "url('./background/bg-services.png'), url('./background/bg-service-2.png')",
@@ -73,6 +73,501 @@ export default function Services() {
             >
               Book a 15-min call
             </Link>
+          </motion.div>
+        </div>
+        <div className="mt-14 flex flex-wrap lg:flex-row md:gap-6 w-fit justify-center items-center lg:items-stretch">
+          {/* Card 1: Scalable Architecture */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "456px",
+              width: "370px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col">
+              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <Image
+                    src="/icons/arrow-nav.png"
+                    alt="Arrow Navigation"
+                    width={15}
+                    height={15}
+                    className="opacity-50"
+                  />
+                </div>
+              </div>
+              <h3 className="text-white text-md font-medium pl-12">
+                Custom Digital Product Development
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+                Build What Your Vision Deserves.
+              </p>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                // height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "158px",
+                width: "100%",
+              }}
+              className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/services/digital-service.jpg"
+                alt="bg Icon"
+                width={400}
+                height={200}
+                className="object-cover rounded-xl"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "456px",
+              width: "370px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col">
+              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <Image
+                    src="/icons/arrow-nav.png"
+                    alt="Arrow Navigation"
+                    width={15}
+                    height={15}
+                    className="opacity-50"
+                  />
+                </div>
+              </div>
+              <h3 className="text-white text-md font-medium pl-12">
+                Custom Digital Product Development
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+                Build What Your Vision Deserves.
+              </p>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                // height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "158px",
+                width: "100%",
+              }}
+              className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/services/digital-service.jpg"
+                alt="bg Icon"
+                width={400}
+                height={200}
+                className="object-cover rounded-xl"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "456px",
+              width: "370px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col">
+              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <Image
+                    src="/icons/arrow-nav.png"
+                    alt="Arrow Navigation"
+                    width={15}
+                    height={15}
+                    className="opacity-50"
+                  />
+                </div>
+              </div>
+              <h3 className="text-white text-md font-medium pl-12">
+                Custom Digital Product Development
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+                Build What Your Vision Deserves.
+              </p>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                // height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "158px",
+                width: "100%",
+              }}
+              className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/services/digital-service.jpg"
+                alt="bg Icon"
+                width={400}
+                height={200}
+                className="object-cover rounded-xl"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "456px",
+              width: "370px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col">
+              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <Image
+                    src="/icons/arrow-nav.png"
+                    alt="Arrow Navigation"
+                    width={15}
+                    height={15}
+                    className="opacity-50"
+                  />
+                </div>
+              </div>
+              <h3 className="text-white text-md font-medium pl-12">
+                Custom Digital Product Development
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+                Build What Your Vision Deserves.
+              </p>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                // height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "158px",
+                width: "100%",
+              }}
+              className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/services/digital-service.jpg"
+                alt="bg Icon"
+                width={400}
+                height={200}
+                className="object-cover rounded-xl"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "456px",
+              width: "370px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col">
+              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <Image
+                    src="/icons/arrow-nav.png"
+                    alt="Arrow Navigation"
+                    width={15}
+                    height={15}
+                    className="opacity-50"
+                  />
+                </div>
+              </div>
+              <h3 className="text-white text-md font-medium pl-12">
+                Custom Digital Product Development
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+                Build What Your Vision Deserves.
+              </p>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                // height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "158px",
+                width: "100%",
+              }}
+              className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/services/digital-service.jpg"
+                alt="bg Icon"
+                width={400}
+                height={200}
+                className="object-cover rounded-xl"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              backgroundImage: "url('/background/bg-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "456px",
+              width: "370px",
+            }}
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex flex-col">
+              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <Image
+                    src="/icons/arrow-nav.png"
+                    alt="Arrow Navigation"
+                    width={15}
+                    height={15}
+                    className="opacity-50"
+                  />
+                </div>
+              </div>
+              <h3 className="text-white text-md font-medium pl-12">
+                Custom Digital Product Development
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+                Build What Your Vision Deserves.
+              </p>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                // height: "0.5px",
+                borderWidth: "1px ",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(to right, transparent, #ffffff1d, transparent) 1",
+                borderImageSlice: 1,
+              }}
+            />
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+              Future-ready codebases that grow with your business..
+            </p>
+
+            {/* Visual Element */}
+            <div
+              style={{
+                height: "158px",
+                width: "100%",
+              }}
+              className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/services/digital-service.jpg"
+                alt="bg Icon"
+                width={400}
+                height={200}
+                className="object-cover rounded-xl"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
