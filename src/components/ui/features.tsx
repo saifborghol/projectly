@@ -137,7 +137,7 @@ const RadialSwiper: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative w-full h-full  pt-24 overflow-hidden">
+    <div className="relative w-full h-full  pt-24 overflow-hidden bg-black">
       {/* Main radial container */}
       <div
         ref={containerRef}
