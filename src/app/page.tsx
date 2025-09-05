@@ -14,10 +14,13 @@ import Testimonials from "@/components/ui/Testimonials";
 import Collaborate from "@/components/ui/Collaborate";
 import FAQ from "@/components/ui/FAQ";
 import Join from "@/components/ui/join";
+import SEO from "@/components/SEO";
+import GradualBlurMemo from "@/components/GradualBlur";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
+      <SEO />
       <Navbar />
       <Hero />
       <AboutUs />
@@ -30,10 +33,23 @@ export default function Home() {
       <Process />
       <Launch />
       <Testimonials />
-      <Collaborate />
       <FAQ />
+      <Collaborate />
       <Join />
       <Footer />
+
+      <GradualBlurMemo
+        position="bottom"
+        height="8rem"
+        strength={3}
+        divCount={6}
+        target="page"
+        animated={true}
+        duration="0.5s"
+        easing="ease-out"
+        curve="ease-out"
+        opacity={0.9}
+      />
     </main>
   );
 }

@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-1000 bg-black/20 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -29,12 +29,11 @@ export default function Navbar() {
             className="flex-shrink-0"
           >
             <Link href="/" className="flex items-center">
-              <Image 
-                src="/logo.png" 
-                alt="Projectly Logo" 
-                width={100} 
-                height={40} 
-                // className="h-10 w-auto"
+              <Image
+                src="/logo.png"
+                alt="Projectly Logo"
+                width={120}
+                height={48}
               />
             </Link>
           </motion.div>
@@ -70,7 +69,7 @@ export default function Navbar() {
           >
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white px-[18px] py-[10px] rounded-[10px] text-sm font-medium hover:from-[#4F1AD6]/90 hover:to-[#8059E3]/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white px-[20px] py-[12px] rounded-[10px] text-sm font-medium hover:from-[#4F1AD6]/90 hover:to-[#8059E3]/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               Get In Touch
             </Link>
@@ -142,7 +141,7 @@ export default function Navbar() {
           >
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white block px-[18px] py-[10px] rounded-[10px] text-base font-medium text-center transition-all duration-200 hover:from-[#4F1AD6]/90 hover:to-[#8059E3]/90"
+              className="bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white block px-[20px] py-[12px] rounded-[10px] text-base font-medium text-center transition-all duration-200 hover:from-[#4F1AD6]/90 hover:to-[#8059E3]/90"
               onClick={() => setIsOpen(false)}
             >
               Get In Touch
@@ -150,7 +149,7 @@ export default function Navbar() {
           </motion.div>
         </div>
       </motion.div>
-      
+
       {/* Light gray divider */}
       <div className="border-b border-gray-300/10"></div>
     </nav>

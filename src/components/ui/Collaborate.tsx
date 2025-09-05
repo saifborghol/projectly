@@ -18,7 +18,7 @@ const Collaborate = () => {
         <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
           <p className="font-bold text-[10px]">24/7</p>
         </div>
-        <span className="text_button">Collaborate</span>
+        <span className="text_button">Collaborate With Us</span>
       </button>
       <motion.div
         initial={{ opacity: 0, y: 30 }}

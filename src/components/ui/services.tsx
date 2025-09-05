@@ -3,20 +3,33 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import LightRays from "../LightRays";
 
 export default function Services() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-40 bg-black pb-20">
       <div
-        className=" bg-[#080808] py-20 rounded-[8px]"
+        className=" relative  bg-[#080808] py-20 rounded-[8px]"
         style={{
-          backgroundImage:
-            "url('./background/bg-services.png'), url('./background/bg-service-2.png')",
           backgroundSize: "cover,70%",
           backgroundPosition: "center, top",
           backgroundRepeat: "no-repeat, no-repeat",
         }}
       >
+        <div className="absolute top-0 left-0 w-full h-full">
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#7323a9"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+            className="custom-rays"
+          />
+        </div>
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
           {/* Services Badge */}
           <button className="button mb-6">
@@ -63,6 +76,7 @@ export default function Services() {
 
           {/* CTA Button */}
           <motion.div
+            className="z-50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -129,7 +143,6 @@ export default function Services() {
             <div
               style={{
                 width: "100%",
-                // height: "0.5px",
                 borderWidth: "1px ",
                 borderStyle: "solid",
                 borderImage:
@@ -211,7 +224,6 @@ export default function Services() {
             <div
               style={{
                 width: "100%",
-                // height: "0.5px",
                 borderWidth: "1px ",
                 borderStyle: "solid",
                 borderImage:
@@ -293,7 +305,6 @@ export default function Services() {
             <div
               style={{
                 width: "100%",
-                // height: "0.5px",
                 borderWidth: "1px ",
                 borderStyle: "solid",
                 borderImage:
@@ -375,7 +386,6 @@ export default function Services() {
             <div
               style={{
                 width: "100%",
-                // height: "0.5px",
                 borderWidth: "1px ",
                 borderStyle: "solid",
                 borderImage:
@@ -457,7 +467,6 @@ export default function Services() {
             <div
               style={{
                 width: "100%",
-                // height: "0.5px",
                 borderWidth: "1px ",
                 borderStyle: "solid",
                 borderImage:
@@ -539,7 +548,6 @@ export default function Services() {
             <div
               style={{
                 width: "100%",
-                // height: "0.5px",
                 borderWidth: "1px ",
                 borderStyle: "solid",
                 borderImage:

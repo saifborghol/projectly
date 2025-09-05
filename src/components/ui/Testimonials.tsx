@@ -3,20 +3,41 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import TestimonialCard from "../card/testimonialCard";
+import LightRays from "../LightRays";
+import LogoLoop from "../LogoLoop";
+
+const partnerLogos = [
+  { src: "/partners/partner1.png", alt: "Partner 1", href: "#" },
+  { src: "/partners/partner2.png", alt: "Partner 2", href: "#" },
+  { src: "/partners/partner3.png", alt: "Partner 3", href: "#" },
+  { src: "/partners/partner4.png", alt: "Partner 4", href: "#" },
+];
 
 const Testimonials = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full px-40 bg-black pb-20">
       <div
-        className="w-full bg-[#080808] py-20"
+        className=" relative  bg-[#080808] py-20 rounded-[8px]"
         style={{
-          backgroundImage:
-            "url('./background/bg-services.png'), url('./background/bg-service-2.png')",
           backgroundSize: "cover,70%",
           backgroundPosition: "center, top",
           backgroundRepeat: "no-repeat, no-repeat",
         }}
       >
+        <div className="absolute top-0 left-0 w-full h-full">
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#7323a9"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+            className="custom-rays"
+          />
+        </div>
         <div className="max-w-7xl mx-auto text-center flex flex-col items-center justify-center px-4">
           <button className="button mb-6">
             <div className="dots_border"></div>
@@ -64,7 +85,7 @@ const Testimonials = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <motion.div
-              className="bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white px-8 py-4 rounded-lg text-sm font-medium transition-all duration-200 shadow-lg cursor-pointer"
+              className="bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white px-8 py-4 rounded-lg text-sm font-medium transition-all duration-200 shadow-lg cursor-pointer z-50"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(79, 26, 214, 0.3)",
@@ -103,81 +124,30 @@ const Testimonials = () => {
               <TestimonialCard index={5} />
             </motion.div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative max-w-[450px] mx-auto overflow-hidden"
-            style={{
-              maskImage:
-                "linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)",
-              WebkitMaskImage:
-                "linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)",
-            }}
-          >
-            <div className="flex animate-slide py-8">
-              <div className="flex min-w-full justify-around items-center gap-8 opacity-60">
-                <Image
-                  src="/partners/partner1.png"
-                  alt="Partner 1"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner2.png"
-                  alt="Partner 2"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner3.png"
-                  alt="Partner 3"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner4.png"
-                  alt="Partner 4"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-              <div className="flex min-w-full justify-around items-center gap-8 opacity-60">
-                <Image
-                  src="/partners/partner1.png"
-                  alt="Partner 1"
-                  width={150}
-                  height={40}
-                  className="pl-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner2.png"
-                  alt="Partner 2"
-                  width={150}
-                  height={40}
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner3.png"
-                  alt="Partner 3"
-                  width={150}
-                  height={40}
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner4.png"
-                  alt="Partner 4"
-                  width={150}
-                  height={40}
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
+
+          <div className="w-full max-w-4xl mx-auto">
+            <div
+              style={{
+                height: "80px",
+                position: "relative",
+                overflow: "hidden",
+                width: "100%",
+              }}
+            >
+              <LogoLoop
+                logos={partnerLogos}
+                speed={40}
+                direction="left"
+                logoHeight={60}
+                gap={40}
+                pauseOnHover
+                scaleOnHover
+                fadeOut
+                fadeOutColor="rgba(0, 0, 0, 0.8)"
+                ariaLabel="Partner companies"
+              />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

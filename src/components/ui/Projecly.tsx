@@ -3,35 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Link } from "lucide-react";
-import ScrollStack, { ScrollStackItem } from "../ScrollStackItem";
-
-const globalScrollbarStyles = `
-  * {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-  }
-  *::-webkit-scrollbar {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-  }
-  *::-webkit-scrollbar-track {
-    display: none !important;
-  }
-  *::-webkit-scrollbar-thumb {
-    display: none !important;
-  }
-  *::-webkit-scrollbar-corner {
-    display: none !important;
-  }
-  html, body, div, section, article, main, aside, nav, header, footer {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-  }
-  html::-webkit-scrollbar, body::-webkit-scrollbar, div::-webkit-scrollbar {
-    display: none !important;
-  }
-`;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -78,8 +49,7 @@ const cardVariants = {
 
 const Projecly = () => {
   return (
-    <div className="bg-black text-white p-4 sm:p-6 lg:p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center overflow-hidden">
-      <style dangerouslySetInnerHTML={{ __html: globalScrollbarStyles }} />
+    <div className="bg-black text-white p-4 sm:p-6 lg:p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center">
       <hr
         className="w-full border-0 h-px mb-6 sm:mb-8"
         style={{
@@ -88,8 +58,14 @@ const Projecly = () => {
         }}
       />
 
-      <div className="flex flex-col lg:flex-row lg:gap-20 xl:gap-40 w-full max-w-[1400px]">
-        <div className="flex flex-col w-full lg:w-[60%] overflow-hidden min-w-0">
+      <div className="flex flex-col lg:flex-row lg:gap-20 xl:gap-40 w-full max-w-7xl">
+        <div
+          className="flex flex-col w-full lg:w-1/2 lg:h-[600px] lg:overflow-y-auto lg:pr-2"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
           <motion.div
             className="mb-6 sm:mb-8 flex justify-start"
             variants={itemVariants}
@@ -120,7 +96,7 @@ const Projecly = () => {
           </motion.div>
 
           <motion.div
-            className="mb-[-150px] text-left"
+            className="mb-8 sm:mb-12 text-left"
             variants={itemVariants}
             initial="hidden"
             animate="visible"
@@ -164,274 +140,254 @@ const Projecly = () => {
           </motion.div>
 
           <motion.div
-            className="h-auto lg:h-[600px] w-full flex justify-start"
+            className="space-y-4 sm:space-y-5"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            style={{
-              overflow: "hidden",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
           >
-            <ScrollStack>
-              <ScrollStackItem>
-                <motion.div
-                  className="w-full min-w-[520px] max-w-[600px] rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E] bg-black"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #0F091226, #0C0912), #0C0912",
-                    backgroundColor: "#0C0912",
-                  }}
-                  variants={cardVariants}
-                  whileHover={{
-                    boxShadow:
-                      "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
-                    scale: 1.02,
-                  }}
+            <motion.div
+              className="w-full lg:w-130 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+              style={{
+                background: "radial-gradient(circle, #0F091226, #0C0912)",
+              }}
+              variants={cardVariants}
+              whileHover={{
+                boxShadow:
+                  "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
+                scale: 1.02,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Image
+                  src="/icons/three_block.svg"
+                  alt="bg"
+                  width={32}
+                  height={32}
+                  className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+                />
+                <motion.span
+                  className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <motion.div
-                    className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    <Image
-                      src="/icons/three_block.svg"
-                      alt="bg"
-                      width={32}
-                      height={32}
-                      className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
-                    />
-                    <motion.span
-                      className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      Assist
-                    </motion.span>
-                  </motion.div>
+                  Assist
+                </motion.span>
+              </motion.div>
 
-                  <motion.p
-                    className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
-                    style={{
-                      borderBottom: "1px solid transparent",
-                      borderImage:
-                        "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
-                    }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                  >
-                    Advanced AI, Streamlined Design
-                  </motion.p>
+              <motion.p
+                className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
+                style={{
+                  borderBottom: "1px solid transparent",
+                  borderImage:
+                    "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
+                }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                Advanced AI, Streamlined Design
+              </motion.p>
 
-                  <motion.p
-                    className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                  >
-                    Projecly blends cutting-edge AI capabilities with sleek,
-                    modern design. It's built for agencies that need to showcase
-                    sophisticated technology in a user-friendly and visually
-                    compelling way.
-                  </motion.p>
+              <motion.p
+                className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Projecly blends cutting-edge AI capabilities with sleek, modern
+                design. It's built for agencies that need to showcase
+                sophisticated technology in a user-friendly and visually
+                compelling way.
+              </motion.p>
 
-                  <motion.div
-                    className="flex flex-wrap gap-2 sm:gap-3 my-4 sm:my-5"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                  >
-                    <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
-                      <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
-                        AI Design
-                      </p>
-                    </div>
-                    <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
-                      <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
-                        Tech Innovation
-                      </p>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              </ScrollStackItem>
+              <motion.div
+                className="flex flex-wrap gap-2 sm:gap-3 my-4 sm:my-5"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
+                  <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
+                    AI Design
+                  </p>
+                </div>
+                <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
+                  <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
+                    Tech Innovation
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
 
-              <ScrollStackItem>
-                <motion.div
-                  className="w-full min-w-[400px] max-w-[500px] rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E] bg-black"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #0F091226, #0C0912), #0C0912",
-                    backgroundColor: "#0C0912",
-                  }}
-                  variants={cardVariants}
-                  whileHover={{
-                    boxShadow:
-                      "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
-                    scale: 1.02,
-                  }}
+            <motion.div
+              className="w-full lg:w-130 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+              style={{
+                background: "radial-gradient(circle, #0F091226, #0C0912)",
+              }}
+              variants={cardVariants}
+              whileHover={{
+                boxShadow:
+                  "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
+                scale: 1.02,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Image
+                  src="/icons/cursor.svg"
+                  alt="bg"
+                  width={32}
+                  height={32}
+                  className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+                />
+                <motion.span
+                  className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <motion.div
-                    className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                  >
-                    <Image
-                      src="/icons/cursor.svg"
-                      alt="bg"
-                      width={32}
-                      height={32}
-                      className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
-                    />
-                    <motion.span
-                      className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      Guide
-                    </motion.span>
-                  </motion.div>
+                  Guide
+                </motion.span>
+              </motion.div>
 
-                  <motion.p
-                    className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
-                    style={{
-                      borderBottom: "1px solid transparent",
-                      borderImage:
-                        "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
-                    }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                  >
-                    Effortless Customization for Your Brand
-                  </motion.p>
+              <motion.p
+                className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
+                style={{
+                  borderBottom: "1px solid transparent",
+                  borderImage:
+                    "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
+                }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                Effortless Customization for Your Brand
+              </motion.p>
 
-                  <motion.p
-                    className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                  >
-                    Projecly comes with flexible design options that adapt to
-                    your unique vision. With easy to use customization tools,
-                    you can fine-tune every detail to fit your brand's style and
-                    messaging.
-                  </motion.p>
+              <motion.p
+                className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Projecly comes with flexible design options that adapt to your
+                unique vision. With easy to use customization tools, you can
+                fine-tune every detail to fit your brand's style and messaging.
+              </motion.p>
 
-                  <motion.div
-                    className="flex flex-wrap gap-2 sm:gap-3 my-4 sm:my-5"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                  >
-                    <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
-                      <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
-                        Easy Customization
-                      </p>
-                    </div>
-                    <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
-                      <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
-                        Brand Identity
-                      </p>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              </ScrollStackItem>
+              <motion.div
+                className="flex flex-wrap gap-2 sm:gap-3 my-4 sm:my-5"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
+                  <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
+                    Easy Customization
+                  </p>
+                </div>
+                <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
+                  <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
+                    Brand Identity
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
 
-              <ScrollStackItem>
-                <motion.div
-                  className="w-full min-w-[520px] max-w-[600px] rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E] bg-black"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #0F091226, #0C0912), #0C0912",
-                    backgroundColor: "#0C0912",
-                  }}
-                  variants={cardVariants}
-                  whileHover={{
-                    boxShadow:
-                      "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
-                    scale: 1.02,
-                  }}
+            <motion.div
+              className="w-full lg:w-130 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+              style={{
+                background: "radial-gradient(circle, #0F091226, #0C0912)",
+              }}
+              variants={cardVariants}
+              whileHover={{
+                boxShadow:
+                  "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
+                scale: 1.02,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <Image
+                  src="/icons/triple.svg"
+                  alt="bg"
+                  width={32}
+                  height={32}
+                  className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+                />
+                <motion.span
+                  className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <motion.div
-                    className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                  >
-                    <Image
-                      src="/icons/triple.svg"
-                      alt="bg"
-                      width={32}
-                      height={32}
-                      className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
-                    />
-                    <motion.span
-                      className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      Resolve
-                    </motion.span>
-                  </motion.div>
+                  Resolve
+                </motion.span>
+              </motion.div>
 
-                  <motion.p
-                    className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
-                    style={{
-                      borderBottom: "1px solid transparent",
-                      borderImage:
-                        "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
-                    }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                  >
-                    Future-Proof and Scalable Solutions
-                  </motion.p>
+              <motion.p
+                className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
+                style={{
+                  borderBottom: "1px solid transparent",
+                  borderImage:
+                    "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
+                }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                Future-Proof and Scalable Solutions
+              </motion.p>
 
-                  <motion.p
-                    className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                  >
-                    Projecly is built to grow with your agency. Whether you're
-                    adding new services, expanding your team, or scaling up your
-                    product line.
-                  </motion.p>
+              <motion.p
+                className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                Projecly is built to grow with your agency. Whether you're
+                adding new services, expanding your team, or scaling up your
+                product line.
+              </motion.p>
 
-                  <motion.div
-                    className="mt-6 sm:mt-8 mb-2 sm:mb-3"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.9 }}
-                  >
-                    <motion.div
-                      className="inline-block bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm font-medium transition-all duration-200 shadow-lg"
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 20px 40px rgba(79, 26, 214, 0.3)",
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      Book An Appointment
-                    </motion.div>
-                  </motion.div>
+              <motion.div
+                className="mt-6 sm:mt-8 mb-2 sm:mb-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                <motion.div
+                  className="inline-block bg-gradient-to-r from-[#4F1AD6] to-[#8059E3] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm font-medium transition-all duration-200 shadow-lg"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(79, 26, 214, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Book An Appointment
                 </motion.div>
-              </ScrollStackItem>
-            </ScrollStack>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
 
         <motion.div
-          className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-[40%]"
+          className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
           variants={itemVariants}
           initial="hidden"
           animate="visible"

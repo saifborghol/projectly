@@ -12,118 +12,174 @@ interface AppIcon {
   bgColor: string;
 }
 
+interface FloatingText {
+  id: number;
+  text: string;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  speed: number;
+}
+
 const RadialSwiper: React.FC = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const [rotation, setRotation] = useState<number>(0);
+  const [floatingTexts, setFloatingTexts] = useState<FloatingText[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // App icons for the radial carousel
+  useEffect(() => {
+    const texts = [
+      "Data Analytics",
+      "ChatOps",
+      "Intelligence",
+      "Cloud Infrastructure",
+      "Cognitive AI",
+      "Smart Automation",
+      "ML Pipeline",
+      "Neural Networks",
+      "Deep Learning",
+      "Microservices",
+      "DevOps",
+    ];
+
+    const cardWidth = 280;
+    const lineHeight = 45;
+    const startY = 30;
+    const textsPerLine = 3;
+
+    const initialTexts: FloatingText[] = texts.map((text, index) => {
+      const lineIndex = Math.floor(index / textsPerLine);
+      const positionInLine = index % textsPerLine;
+      const speed = 1.0 + Math.random() * 1.5;
+      const direction = Math.random() < 0.5 ? -1 : 1;
+
+      const lineSpacing = (cardWidth - 140) / (textsPerLine - 1);
+      const startX = 20 + positionInLine * lineSpacing;
+
+      return {
+        id: index,
+        text,
+        x: startX + Math.random() * 60,
+        y: startY + lineIndex * lineHeight,
+        vx: direction * speed,
+        vy: 0,
+        speed: speed,
+      };
+    });
+
+    setFloatingTexts(initialTexts);
+  }, [mounted]);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    const cardWidth = 280;
+    const textPadding = 120;
+
+    const animateTexts = () => {
+      setFloatingTexts((prev) =>
+        prev.map((text) => {
+          let newX = text.x + text.vx;
+          let newVx = text.vx;
+
+          if (newX <= 0 || newX >= cardWidth - textPadding) {
+            newVx = -newVx;
+            newX = newX <= 0 ? 0 : cardWidth - textPadding;
+          }
+
+          return {
+            ...text,
+            x: newX,
+            vx: newVx,
+          };
+        })
+      );
+    };
+
+    const interval = setInterval(animateTexts, 50);
+    return () => clearInterval(interval);
+  }, [mounted]);
+
   const appIcons: AppIcon[] = [
     {
       id: 3,
       name: "SaaS Dashboard",
-      imageUrl:
-        "https://images.pexels.com/photos/3277808/pexels-photo-3277808.jpeg",
+      imageUrl: "/gallery/gallery1.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 4,
       name: "Food Delivery",
-      imageUrl:
-        "https://images.pexels.com/photos/4467858/pexels-photo-4467858.jpeg",
+      imageUrl: "/gallery/gallery2.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 5,
       name: "Media Hub",
-      imageUrl:
-        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      imageUrl: "/gallery/gallery3.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 6,
       name: "File Manager",
-      imageUrl:
-        "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
+      imageUrl: "/gallery/gallery4.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 7,
       name: "Analytics",
-      imageUrl:
-        "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg",
+      imageUrl: "/gallery/gallery5.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 8,
       name: "Link Manager",
-      imageUrl:
-        "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg",
+      imageUrl: "/gallery/gallery6.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 9,
       name: "Design Studio",
-      imageUrl:
-        "https://images.pexels.com/photos/414860/pexels-photo-414860.jpeg",
+      imageUrl: "/gallery/gallery7.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 10,
       name: "WWF App",
-      imageUrl:
-        "https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg",
+      imageUrl: "/gallery/gallery8.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 11,
       name: "Shell Terminal",
-      imageUrl:
-        "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+      imageUrl: "/gallery/gallery9.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 12,
       name: "Security App",
-      imageUrl:
-        "https://images.pexels.com/photos/3913025/pexels-photo-3913025.jpeg",
+      imageUrl: "/gallery/gallery10.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 1,
       name: "CloudKit",
-      imageUrl:
-        "https://images.pexels.com/photos/414860/pexels-photo-414860.jpeg",
+      imageUrl: "/gallery/gallery11.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
       id: 2,
       name: "Terminal",
-      imageUrl:
-        "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
-      bgColor: "from-blue-400 to-blue-600",
-    },
-    {
-      id: 8,
-      name: "Link Manager",
-      imageUrl:
-        "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg",
-      bgColor: "from-blue-400 to-blue-600",
-    },
-    {
-      id: 9,
-      name: "Design Studio",
-      imageUrl:
-        "https://images.pexels.com/photos/414860/pexels-photo-414860.jpeg",
+      imageUrl: "/gallery/gallery12.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
   ];
 
-  // Auto rotation
   useEffect(() => {
     if (!mounted) return;
 
@@ -137,19 +193,19 @@ const RadialSwiper: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative w-full h-full  pt-24 overflow-hidden bg-black">
+    <div className="relative w-full h-full pt-24 overflow-hidden bg-black">
       {/* Main radial container */}
       <div
         ref={containerRef}
-        className="flex items-center justify-center  cursor-grab active:cursor-grabbing"
+        className="flex items-center justify-center cursor-grab active:cursor-grabbing"
       >
-        <div className="relative w-full h-[750px] z-10">
+        <div className="relative w-full h-[900px] z-10">
           {appIcons.map((app: AppIcon, index: number) => {
             const angle = (index * 360) / appIcons.length + rotation;
             const normalizedAngle = ((angle % 360) + 360) % 360;
             const isTopHalf = normalizedAngle > 180 || normalizedAngle < 10;
             if (!isTopHalf) return null;
-            const radius = 450;
+            const radius = 500;
             const x = Math.cos((angle * Math.PI) / 180) * radius;
             const y = Math.sin((angle * Math.PI) / 180) * radius;
             const fadeRange = 90;
@@ -212,23 +268,13 @@ const RadialSwiper: React.FC = () => {
                                  blur-xl -z-10`}
                   />
                 </div>
-
-                {/* App name label */}
-                {/* <div
-                  className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 
-                               px-3 py-1 bg-black bg-opacity-60 text-white text-sm rounded-lg
-                               opacity-0 group-hover:opacity-100 transition-all duration-200
-                               whitespace-nowrap backdrop-blur-sm border border-white border-opacity-20"
-                >
-                  {app.name}
-                </div> */}
               </div>
             );
           })}
         </div>
 
         {/* Central content */}
-        <div className="absolute  flex flex-col items-center justify-center z-[100] cursor-auto  select-text  mt-[-250px]">
+        <div className="absolute flex flex-col items-center justify-center z-[100] cursor-auto select-text mt-[-250px]">
           {/* Feature badge */}
           <button className="button mb-6">
             <div className="dots_border"></div>
@@ -264,6 +310,7 @@ const RadialSwiper: React.FC = () => {
           </motion.div>
         </div>
       </div>
+
       {/* Three Feature Cards */}
       <div
         style={{
@@ -288,13 +335,15 @@ const RadialSwiper: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{
               backgroundImage: "url('/background/bg-card.png')",
+              backgroundColor: "#080808",
+              backgroundBlendMode: "overlay",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "540px",
               width: "380px",
             }}
-            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+            className="flex flex-col items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
             <div className="flex flex-col items-center">
@@ -341,7 +390,7 @@ const RadialSwiper: React.FC = () => {
                 height: "233px",
                 width: "100%",
                 background:
-                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f,  #300a5c)",
+                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f, #300a5c)",
               }}
               className="rounded-xl p-4 h-32 flex items-center justify-center"
             >
@@ -361,13 +410,15 @@ const RadialSwiper: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             style={{
               backgroundImage: "url('/background/bg-card.png')",
+              backgroundColor: "#080808",
+              backgroundBlendMode: "overlay",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "540px",
               width: "380px",
             }}
-            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+            className="flex flex-col items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
             <div className="flex flex-col items-center">
@@ -387,7 +438,7 @@ const RadialSwiper: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-white text-xl font-semibold mb-3 text-center">
-                Seemless
+                Seamless
                 <br />
                 Cross-Platform Delivery
               </h3>
@@ -408,21 +459,41 @@ const RadialSwiper: React.FC = () => {
               Web, mobile, and cloud — unified under one experience..
             </p>
 
-            {/* Visual Element */}
+            {/* Visual Element with Floating Texts */}
             <div
               style={{
                 height: "233px",
                 width: "100%",
                 background:
-                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f,  #300a5c)",
+                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f, #300a5c)",
               }}
-              className="rounded-xl p-4 h-32 flex items-center justify-center"
+              className="rounded-xl p-4 h-32 flex items-center justify-center relative overflow-hidden"
             >
+              {/* Floating text elements */}
+              {floatingTexts.map((floatingText) => (
+                <div
+                  key={floatingText.id}
+                  className="absolute text-sm text-white/30 px-3 py-1.5 rounded-full border border-white/15 whitespace-nowrap pointer-events-none select-none bg-white/5 backdrop-blur-sm"
+                  style={{
+                    left: `${floatingText.x}px`,
+                    top: `${floatingText.y}px`,
+                    fontSize: "12px",
+                    fontWeight: "500",
+                    transition: "all 0.05s linear",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                  }}
+                >
+                  {floatingText.text}
+                </div>
+              ))}
+
+              {/* Main icon */}
               <Image
                 src="/background/bg-block-card-2.png"
                 alt="bg Icon"
                 width={74}
                 height={74}
+                className="relative z-10"
               />
             </div>
           </motion.div>
@@ -434,13 +505,15 @@ const RadialSwiper: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             style={{
               backgroundImage: "url('/background/bg-card.png')",
+              backgroundColor: "#080808",
+              backgroundBlendMode: "overlay",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "540px",
               width: "380px",
             }}
-            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+            className="flex flex-col items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
             <div className="flex flex-col items-center">
@@ -487,7 +560,7 @@ const RadialSwiper: React.FC = () => {
                 height: "233px",
                 width: "100%",
                 background:
-                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f,  #300a5c)",
+                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f, #300a5c)",
               }}
               className="rounded-xl p-4 h-32 flex flex-col items-center justify-center"
             >
@@ -507,6 +580,7 @@ const RadialSwiper: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
         {/* Additional Features Block */}
         <div
           style={{
@@ -519,7 +593,7 @@ const RadialSwiper: React.FC = () => {
             marginTop: "35px",
           }}
         />
-        <div className="  border-gray-700/30 p-8 mt-4">
+        <div className="border-gray-700/30 p-8 mt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Fast Deployment */}
             <div className="flex flex-col space-y-4">

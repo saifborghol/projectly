@@ -68,7 +68,7 @@ const Launch = () => {
                   className="drop-shadow-md"
                 />
               </motion.div>
-              <span className="text_button">Launch</span>
+              <span className="text_button">Launch Your Site</span>
             </motion.button>
           </motion.div>
 

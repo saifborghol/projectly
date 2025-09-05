@@ -31,19 +31,17 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.6 }}
-      className="w-full max-w-6xl mx-auto"
+      className="w-full max-w-4xl mx-auto"
     >
       <div
         className="relative p-8 rounded-2xl border border-white/10"
         style={{
           background: "#080808",
           boxShadow: `
-            0 -25px 80px rgba(79, 26, 214, 0.6),
-            0 -15px 40px rgba(79, 26, 214, 0.4),
-            0 15px 30px rgba(79, 26, 214, 0.2),
-            0 25px 50px rgba(79, 26, 214, 0.15),
-            -20px 0 60px rgba(79, 26, 214, 0.3),
-            20px 0 60px rgba(79, 26, 214, 0.3)
+            0 -8px 25px rgba(79, 26, 214, 0.15),
+            0 8px 20px rgba(79, 26, 214, 0.1),
+            -8px 0 20px rgba(79, 26, 214, 0.08),
+            8px 0 20px rgba(79, 26, 214, 0.08)
           `,
         }}
       >
@@ -58,7 +56,7 @@ const ContactForm = () => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleInputChange}
-                placeholder="Mohamed"
+                placeholder="Enter your first name"
                 className="w-full px-4 py-3 rounded-lg bg-[#101010] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 text-left"
                 required
               />
@@ -72,7 +70,7 @@ const ContactForm = () => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleInputChange}
-                placeholder="Romdhani"
+                placeholder="Enter your last name"
                 className="w-full px-4 py-3 rounded-lg bg-[#101010] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 text-left"
                 required
               />
@@ -88,7 +86,7 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="offbeat.gr@gmail.com"
+              placeholder="Enter your email address"
               className="w-full px-4 py-3 rounded-lg bg-[#101010] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 text-left"
               required
             />
@@ -179,7 +177,7 @@ const ContactForm = () => {
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              placeholder="Type your message..."
+              placeholder="Tell us about your project or how we can help you..."
               rows={6}
               className="w-full px-4 py-3 rounded-lg bg-[#101010] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 resize-none text-left"
               required

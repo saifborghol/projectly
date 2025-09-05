@@ -73,7 +73,7 @@ body {
   transform: translate(-50%, -50%);
 
   /* width: 100%; */
-  width: 110px;
+  width: 165px;
   height: 40px;
   background-color: var(--black-700);
 
@@ -126,7 +126,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 112px;
+  width: 167px;
   height: 41px;
   background-color: transparent;
 

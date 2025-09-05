@@ -3,26 +3,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import LogoLoop from "../LogoLoop";
+
+// Partner logos configuration
+const partnerLogos = [
+  { src: "/partners/partner1.png", alt: "Partner 1", href: "#" },
+  { src: "/partners/partner2.png", alt: "Partner 2", href: "#" },
+  { src: "/partners/partner3.png", alt: "Partner 3", href: "#" },
+  { src: "/partners/partner4.png", alt: "Partner 4", href: "#" },
+];
 
 export default function Hero() {
   return (
     <>
-      {/* // */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800 pt-24">
-        {/* Background gradient effects */}
-        {/* <div className="absolute bottom-0 left-0 right-0 z-0 h-[300px] pointer-events-none ">
-          <Image
-            src="/background/purple-ring.png"
-            alt="Purple Ring"
-            fill
-            priority
-            className="object-contain w-full h-full"
-          />
-        </div> */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Badge */}
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -32,7 +28,6 @@ export default function Hero() {
             <div
               className="inline-flex items-center rounded-[40px]"
               style={{
-                //   width: '225px',
                 height: "40px",
                 paddingTop: "6px",
                 paddingRight: "16px",
@@ -118,95 +113,49 @@ export default function Hero() {
                 WebkitBackdropFilter: "blur(16px) saturate(180%)",
                 backgroundColor: "rgba(238, 244, 255, 0.30)",
                 borderRadius: "8px",
-                // border: "1px solid rgba(255, 255, 255, 0.125)",
               }}
             >
               What is Projectly?
             </Link>
           </motion.div>
 
-          {/* Partner Logos - Auto Animated Slider */}
+          {/* Partner Logos - LogoLoop Component */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative max-w-[450px] mx-auto overflow-hidden"
-            style={{
-              maskImage:
-                "linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)",
-              WebkitMaskImage:
-                "linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)",
-            }}
+            className="relative max-w-[450px] mx-auto"
           >
+            {/* Top border line */}
             <div
-              className="border-b border-gray-300/20"
+              className="border-b border-gray-300/20 mb-15"
               style={{
                 height: "1px",
                 background:
                   "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%)",
               }}
-            ></div>
-            <div className="flex animate-slide py-4">
-              <div className="flex min-w-full justify-around items-center gap-8 opacity-60">
-                <Image
-                  src="/partners/partner1.png"
-                  alt="Partner 1"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner2.png"
-                  alt="Partner 2"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner3.png"
-                  alt="Partner 3"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner4.png"
-                  alt="Partner 4"
-                  width={150}
-                  height={40}
-                  className=" object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-              <div className="flex min-w-full justify-around items-center gap-8 opacity-60">
-                <Image
-                  src="/partners/partner1.png"
-                  alt="Partner 1"
-                  width={150}
-                  height={40}
-                  className="pl-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner2.png"
-                  alt="Partner 2"
-                  width={150}
-                  height={40}
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner3.png"
-                  alt="Partner 3"
-                  width={150}
-                  height={40}
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <Image
-                  src="/partners/partner4.png"
-                  alt="Partner 4"
-                  width={150}
-                  height={40}
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
+            />
+
+            {/* LogoLoop Container */}
+            <div
+              style={{
+                height: "100px",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <LogoLoop
+                logos={partnerLogos}
+                speed={50}
+                direction="left"
+                logoHeight={80}
+                gap={60}
+                pauseOnHover
+                scaleOnHover
+                fadeOut
+                fadeOutColor="rgba(0, 0, 0, 0.8)"
+                ariaLabel="Partner companies"
+              />
             </div>
           </motion.div>
         </div>

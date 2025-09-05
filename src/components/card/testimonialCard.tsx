@@ -61,7 +61,7 @@ const TestimonialCard = ({ index = 0 }) => {
         ))}
       </div>
 
-      <p className="text-gray-300 text-sm leading-relaxed mb-6">
+      <p className="text-[#FFFFFF80] text-sm leading-relaxed mb-6">
         "They not only delivered a top-notch website but also provided strategic
         insights that helped us improve our overall digital presence."
       </p>

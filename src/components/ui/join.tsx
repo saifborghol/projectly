@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import LightRays from "../LightRays";
 
 const itemVariants = {
   hidden: { y: 50, opacity: 0 },
@@ -17,7 +18,7 @@ const itemVariants = {
 
 const Join = () => {
   return (
-    <section className="relative  flex items-center justify-center overflow-hidden w-full">
+    <section className="relative  flex items-center justify-center overflow-hidden w-full px-40 bg-black">
       <div
         className="w-full bg-[#080808] py-18 "
         style={{
@@ -28,6 +29,20 @@ const Join = () => {
           backgroundRepeat: "no-repeat, no-repeat",
         }}
       >
+        <div className="absolute top-0 left-0 w-full h-full">
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#7323a9"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+            className="custom-rays"
+          />
+        </div>
         <div className="max-w-7xl mx-auto text-center flex flex-col items-center justify-center px-4">
           <button className="button mb-6">
             <div className="dots_border"></div>
@@ -83,7 +98,7 @@ const Join = () => {
           </motion.div>
 
           <motion.div
-            className="mt-8 mb-12 flex justify-center"
+            className="mt-8 mb-12 flex justify-center z-50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
