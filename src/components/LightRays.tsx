@@ -3,7 +3,14 @@ import { Renderer, Program, Triangle, Mesh } from "ogl";
 
 const DEFAULT_COLOR = "#ffffff";
 
-const hexToRgb = (hex) => {
+interface RGBArray extends Array<number> {
+  0: number;
+  1: number;
+  2: number;
+  length: 3;
+}
+
+const hexToRgb = (hex: string): RGBArray => {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return m
     ? [
@@ -14,7 +21,26 @@ const hexToRgb = (hex) => {
     : [1, 1, 1];
 };
 
-const getAnchorAndDir = (origin, w, h) => {
+interface AnchorAndDir {
+  anchor: [number, number];
+  dir: [number, number];
+}
+
+type RaysOrigin =
+  | "top-left"
+  | "top-center"
+  | "top-right"
+  | "left"
+  | "right"
+  | "bottom-left"
+  | "bottom-center"
+  | "bottom-right";
+
+const getAnchorAndDir = (
+  origin: RaysOrigin,
+  w: number,
+  h: number
+): AnchorAndDir => {
   const outside = 0.2;
   switch (origin) {
     case "top-left":
@@ -36,6 +62,22 @@ const getAnchorAndDir = (origin, w, h) => {
   }
 };
 
+interface LightRaysProps {
+  raysOrigin?: RaysOrigin;
+  raysColor?: string;
+  raysSpeed?: number;
+  lightSpread?: number;
+  rayLength?: number;
+  pulsating?: boolean;
+  fadeDistance?: number;
+  saturation?: number;
+  followMouse?: boolean;
+  mouseInfluence?: number;
+  noiseAmount?: number;
+  distortion?: number;
+  className?: string;
+}
+
 const LightRays = ({
   raysOrigin = "top-center",
   raysColor = DEFAULT_COLOR,
@@ -50,17 +92,18 @@ const LightRays = ({
   noiseAmount = 0.0,
   distortion = 0.0,
   className = "",
-}) => {
-  const containerRef = useRef(null);
-  const uniformsRef = useRef(null);
-  const rendererRef = useRef(null);
+}: LightRaysProps) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  type UniformValue = number | number[] | boolean | [number, number] | [number, number, number];
+  const uniformsRef = useRef<Record<string, { value: UniformValue }> | null>(null);
+  const rendererRef = useRef<Renderer | null>(null);
   const mouseRef = useRef({ x: 0.5, y: 0.5 });
   const smoothMouseRef = useRef({ x: 0.5, y: 0.5 });
-  const animationIdRef = useRef(null);
-  const meshRef = useRef(null);
-  const cleanupFunctionRef = useRef(null);
+  const animationIdRef = useRef<number | null>(null);
+  const meshRef = useRef<Mesh | null>(null);
+  const cleanupFunctionRef = useRef<(() => void) | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const observerRef = useRef(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -264,7 +307,11 @@ void main() {
         uniforms.rayDir.value = dir;
       };
 
-      const loop = (t) => {
+      interface LoopTime {
+        (t: number): void;
+      }
+
+      const loop: LoopTime = (t: number) => {
         if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
           return;
         }
@@ -272,18 +319,18 @@ void main() {
         uniforms.iTime.value = t * 0.001;
 
         if (followMouse && mouseInfluence > 0.0) {
-          const smoothing = 0.92;
+          const smoothing: number = 0.92;
 
           smoothMouseRef.current.x =
-            smoothMouseRef.current.x * smoothing +
-            mouseRef.current.x * (1 - smoothing);
+        smoothMouseRef.current.x * smoothing +
+        mouseRef.current.x * (1 - smoothing);
           smoothMouseRef.current.y =
-            smoothMouseRef.current.y * smoothing +
-            mouseRef.current.y * (1 - smoothing);
+        smoothMouseRef.current.y * smoothing +
+        mouseRef.current.y * (1 - smoothing);
 
           uniforms.mousePos.value = [
-            smoothMouseRef.current.x,
-            smoothMouseRef.current.y,
+        smoothMouseRef.current.x,
+        smoothMouseRef.current.y,
           ];
         }
 
@@ -393,12 +440,19 @@ void main() {
   ]);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    // MouseMoveEvent interface removed as it was redundant
+
+    interface MousePosition {
+      x: number;
+      y: number;
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current || !rendererRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      mouseRef.current = { x, y };
+      const x: number = (e.clientX - rect.left) / rect.width;
+      const y: number = (e.clientY - rect.top) / rect.height;
+      mouseRef.current = { x, y } as MousePosition;
     };
 
     if (followMouse) {

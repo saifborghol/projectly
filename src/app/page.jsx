@@ -15,7 +15,10 @@ import Collaborate from "@/components/ui/Collaborate";
 import FAQ from "@/components/ui/FAQ";
 import Join from "@/components/ui/join";
 import SEO from "@/components/SEO";
-import GradualBlurMemo from "@/components/GradualBlur";
+import dynamic from "next/dynamic";
+import GlassBottomBar from "@/components/GlassBottomBar";
+
+// import GradualBlurMemo from "@/components/GradualBlur";
 
 export default function Home() {
   return (
@@ -37,18 +40,18 @@ export default function Home() {
       <Collaborate />
       <Join />
       <Footer />
-
-      <GradualBlurMemo
-        position="bottom"
-        height="8rem"
-        strength={3}
-        divCount={6}
-        target="page"
-        animated={true}
-        duration="0.5s"
-        easing="ease-out"
-        curve="ease-out"
-        opacity={0.9}
+      <div
+        className="pointer-events-none"
+        style={{
+          position: "fixed",
+          insetInline: 0,
+          bottom: 0,
+          height: "75px",
+          zIndex: 50,
+          backdropFilter: "url(filters.svg#filter) blur(4px) saturate(150%)",
+          maskImage:
+            "linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 55%,rgba(0,0,0,0.3) 75%,rgba(0,0,0,0) 100%)",
+        }}
       />
     </main>
   );
