@@ -1,10 +1,9 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Link } from "lucide-react";
 import { StickyScroll } from "../ui/sticky-scroll-reveal";
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -51,196 +50,198 @@ const content = [
   {
     card: (
       <>
-       <div
-            className="flex flex-col w-full lg:w-1/2 lg:h-[600px] lg:overflow-y-auto lg:pr-2"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
-            <motion.div
-              className="mb-6 sm:mb-8 flex justify-start"
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.button
-                className="button"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="dots_border"></div>
-                <motion.div
-                  className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center"
-                  whileHover={{ rotate: 180 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                >
-                  <Image
-                    src="/icons/finger-print.png"
-                    alt="Finger Print"
-                    width={18}
-                    height={18}
-                  />
-                </motion.div>
-                <span className="text_button">Projecly</span>
-              </motion.button>
-            </motion.div>
-
-            <motion.div
-              className="mb-8 sm:mb-12 text-left"
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.h1
-                className="font-base mb-4 sm:mb-6 leading-tight sm:leading-[50px] tracking-wide"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              >
-                <motion.span
-                  className="block text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] mb-2 sm:mb-5"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.7 }}
-                >
-                  AI Meets Design,
-                </motion.span>
-                <motion.span
-                  className="block text-[#FFFFFF99] text-3xl sm:text-4xl lg:text-5xl xl:text-[54px]"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.9 }}
-                >
-                  Purpose Into Ideas!
-                </motion.span>
-              </motion.h1>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.1 }}
-              >
-                <p className="text-[#FFFFFF99] text-sm sm:text-base mb-2 max-w-2xl">
-                  Projecly is a premium IT agency crafted for teams pushing the
-                </p>
-                <p className="text-[#FFFFFF99] text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl">
-                  boundaries of technology.
-                </p>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              className="space-y-4 sm:space-y-5"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            ></motion.div>
-          </div>
-           <motion.div
-        className="w-full lg:w-130 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
-        style={{
-          background: "radial-gradient(circle, #0F091226, #0C0912)",
-        }}
-        variants={cardVariants}
-        whileHover={{
-          boxShadow:
-            "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
-          scale: 1.02,
-        }}
-        transition={{ duration: 0.3 }}
-      >
-        <motion.div
-          className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <Image
-            src="/icons/three_block.svg"
-            alt="bg"
-            width={32}
-            height={32}
-            className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
-          />
-          <motion.span
-            className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            transition={{ duration: 0.3 }}
-          >
-            Assist
-          </motion.span>
-        </motion.div>
-
-        <motion.p
-          className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
+        <div
+          className="flex flex-col w-full  lg:pr-2"
           style={{
-            borderBottom: "1px solid transparent",
-            borderImage:
-              "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
           }}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          // onWheel={onWheelPassThrough}
         >
-          Advanced AI, Streamlined Design
-        </motion.p>
-
-        <motion.p
-          className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          Projecly blends cutting-edge AI capabilities with sleek, modern
-          design. It's built for agencies that need to showcase sophisticated
-          technology in a user-friendly and visually compelling way.
-        </motion.p>
-
-        <motion.div
-          className="flex flex-wrap gap-2 sm:gap-3 my-4 sm:my-5"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
-            <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
-              AI Design
-            </p>
-          </div>
-          <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
-            <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
-              Tech Innovation
-            </p>
-          </div>
-        </motion.div>
-      </motion.div>
-      </>
-     
-    ),
-    content: (
-       <motion.div
-            className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
+          <motion.div
+            className="mb-6 sm:mb-8 flex justify-start"
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <motion.button
+              className="button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="dots_border"></div>
+              <motion.div
+                className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center"
+                whileHover={{ rotate: 180 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                <Image
+                  src="/icons/finger-print.png"
+                  alt="Finger Print"
+                  width={18}
+                  height={18}
+                />
+              </motion.div>
+              <span className="text_button">Projecly</span>
+            </motion.button>
+          </motion.div>
+
+          <motion.div
+            className="mb-8 sm:mb-12 text-left"
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1
+              className="font-base mb-4 sm:mb-6 leading-tight sm:leading-[50px] tracking-wide"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              <motion.span
+                className="block text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] mb-2 sm:mb-5"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                AI Meets Design,
+              </motion.span>
+              <motion.span
+                className="block text-[#FFFFFF99] text-3xl sm:text-4xl lg:text-5xl xl:text-[54px]"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                Purpose Into Ideas!
+              </motion.span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+            >
+              <p className="text-[#FFFFFF99] text-sm sm:text-base mb-2 max-w-2xl">
+                Projecly is a premium IT agency crafted for teams pushing the
+              </p>
+              <p className="text-[#FFFFFF99] text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl">
+                boundaries of technology.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="space-y-4 sm:space-y-5"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          ></motion.div>
+        </div>
+        <motion.div
+          className="w-full mb-6 lg:w-130 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+          style={{
+            background: "radial-gradient(circle, #0F091226, #0C0912)",
+          }}
+          variants={cardVariants}
+          whileHover={{
+            boxShadow:
+              "0 15px 30px rgba(79, 26, 214, 0.2), inset 0 0 30px rgba(79, 26, 214, 0.3)",
+            scale: 1.02,
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.div
+            className="flex justify-between items-center mb-4 sm:mb-6 pb-3 sm:pb-4 relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Image
-              src="/background/projecly_bg.jpg"
+              src="/icons/three_block.svg"
               alt="bg"
-              width={320}
-              height={320}
-              className="sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] border-2 sm:border-4 border-[#080808] rounded-xl sm:rounded-2xl"
+              width={32}
+              height={32}
+              className="sm:w-[40px] sm:h-[40px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
             />
-          </motion.div> 
+            <motion.span
+              className="text-sm sm:text-[16px] px-3 sm:px-5 border-2 border-[#242129] p-2 rounded-[4px] font-medium rounded-full bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent bg-[#16141c]"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ duration: 0.3 }}
+            >
+              Assist
+            </motion.span>
+          </motion.div>
+
+          <motion.p
+            className="w-fit font-medium text-base sm:text-[18px] mb-3 sm:mb-5 pb-2 sm:pb-3"
+            style={{
+              borderBottom: "1px solid transparent",
+              borderImage:
+                "linear-gradient(90deg, transparent 0%, #232026 50%, transparent 100%) 1",
+            }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Advanced AI, Streamlined Design
+          </motion.p>
+
+          <motion.p
+            className="text-[#FFFFFF80] font-base text-sm sm:text-[14px] leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Projecly blends cutting-edge AI capabilities with sleek, modern
+            design. It's built for agencies that need to showcase sophisticated
+            technology in a user-friendly and visually compelling way.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-wrap gap-2 sm:gap-3 my-4 sm:my-5"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
+              <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
+                AI Design
+              </p>
+            </div>
+            <div className="px-3 sm:px-4 py-2 rounded-full border border-white/5 bg-gradient-to-t from-[#4F1AD633] to-[#9999991A]">
+              <p className="bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent text-sm">
+                Tech Innovation
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      </>
+    ),
+    content: (
+      <motion.div
+        className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 0.3 }}
+        style={{ width: "528px" }}
+      >
+        <Image
+          src="/background/projecly_bg.jpg"
+          alt="bg"
+          width={528}
+          height={320}
+          className="sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] border-2 sm:border-4 border-[#080808] rounded-xl sm:rounded-2xl"
+        />
+      </motion.div>
     ),
   },
   {
     card: (
       <motion.div
-        className="w-full lg:w-130 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
+        className="w-full mb-6 lg:w-130 rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
         style={{
           background: "radial-gradient(circle, #0F091226, #0C0912)",
         }}
@@ -319,21 +320,22 @@ const content = [
       </motion.div>
     ),
     content: (
-         <motion.div
-            className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <Image
-              src="/background/projecly_bg.jpg"
-              alt="bg"
-              width={320}
-              height={320}
-              className="sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] border-2 sm:border-4 border-[#080808] rounded-xl sm:rounded-2xl"
-            />
-          </motion.div> 
+      <motion.div
+        className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 0.3 }}
+        style={{ width: "528px" }}
+      >
+        <Image
+          src="/background/projecly_bg.jpg"
+          alt="bg"
+          width={320}
+          height={320}
+          className="sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] border-2 sm:border-4 border-[#080808] rounded-xl sm:rounded-2xl"
+        />
+      </motion.div>
     ),
   },
   {
@@ -418,41 +420,30 @@ const content = [
       </motion.div>
     ),
     content: (
-         <motion.div
-            className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <Image
-              src="/background/projecly_bg.jpg"
-              alt="bg"
-              width={320}
-              height={320}
-              className="sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] border-2 sm:border-4 border-[#080808] rounded-xl sm:rounded-2xl"
-            />
-          </motion.div> 
+      <motion.div
+        className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 0.3 }}
+        style={{ width: "528px" }}
+      >
+        <Image
+          src="/background/projecly_bg.jpg"
+          alt="bg"
+          width={320}
+          height={320}
+          className="sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] border-2 sm:border-4 border-[#080808] rounded-xl sm:rounded-2xl"
+        />
+      </motion.div>
     ),
-  }
+  },
 ];
 const Projecly = () => {
   return (
-    <>
-      <div className="bg-black text-white p-4 sm:p-6 lg:p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center">
-        <hr
-          className="w-full border-0 h-px mb-6 sm:mb-8"
-          style={{
-            background:
-              "linear-gradient(to right, transparent 0%, #FFFFFF1A , transparent 100%)",
-          }}
-        />
-      </div>
-
-      <div className="w-full py-4">
-        <StickyScroll content={content} />
-      </div>
-    </>
+    <div style={{ backgroundColor:"black" }}>
+      <StickyScroll content={content} />
+    </div>
   );
 };
 

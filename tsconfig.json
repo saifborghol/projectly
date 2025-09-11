@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui/sticky-scroll-reveal.jsx", "src/components/GlassBottomBar.jsx", "src/app/page.jsx", "src/components/card/testimonialCard.jsx", "src/components/ui/Testimonials.jsx", "src/components/ui/Support.jsx", "src/components/ui/services.jsx", "src/components/ui/Projecly.jsx", "src/components/ui/Process.jsx", "src/components/ui/Portfolio.jsx", "src/components/ui/Navbar.jsx", "src/components/ui/Launch.jsx", "src/components/ui/join.jsx", "src/components/ui/Integration.jsx", "src/components/ui/Hero.jsx", "src/components/ui/FAQ.jsx", "src/components/ui/aboutUs.jsx"],
   "exclude": ["node_modules"]
 }

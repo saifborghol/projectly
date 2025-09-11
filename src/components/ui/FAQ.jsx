@@ -63,15 +63,15 @@ const FAQ = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-40 bg-black py-20">
+    <section className="relative min-h-screen flex items-center justify-center bg-black py-20 overflow-hidden overflow-x-clip px-4 sm:px-6 lg:px-10">
       <div
-        className="min-h-screen bg-black text-white p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
+        className="min-h-screen bg-black text-white bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center w-full overflow-x-clip"
         style={{
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}
       >
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="max-w-7xl mx-auto w-full px-2 sm:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 w-full min-w-0">
             <div className="flex flex-col justify-start text-left">
               <motion.div className="mb-8" variants={itemVariants}>
                 <motion.button
@@ -137,7 +137,7 @@ const FAQ = () => {
               </motion.div>
             </div>
 
-            <div className="space-y-4 w-full">
+            <div className="space-y-4 w-full min-w-0">
               {faqItems.map((item, index) => (
                 <motion.div
                   key={item.id}
@@ -156,13 +156,13 @@ const FAQ = () => {
                     <motion.div
                       animate={{ rotate: expandedItem === item.id ? 45 : 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="flex-shrink-0 mt-0.5"
+                      className="flex-shrink-0 mt-0.5 w-6 h-6 grid place-items-center overflow-hidden"
+                      style={{ contain: "layout" }}
                     >
                       <svg
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        fill="none"
                         className="text-white/70"
                       >
                         <path

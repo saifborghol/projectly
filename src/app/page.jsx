@@ -15,10 +15,6 @@ import Collaborate from "@/components/ui/Collaborate";
 import FAQ from "@/components/ui/FAQ";
 import Join from "@/components/ui/join";
 import SEO from "@/components/SEO";
-import dynamic from "next/dynamic";
-import GlassBottomBar from "@/components/GlassBottomBar";
-
-// import GradualBlurMemo from "@/components/GradualBlur";
 
 export default function Home() {
   return (
