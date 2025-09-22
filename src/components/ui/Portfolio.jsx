@@ -51,7 +51,7 @@ const Portfolio = () => {
     const newZIndex =
       portfolioData.length - index - Math.floor(stackProgress * 10);
 
-    const opacity = Math.max(0.7, 1 - stackProgress * 0.15);
+    const opacity = 1;
 
     return {
       transform: `translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg) translateZ(${translateZ}px)`,
@@ -182,14 +182,16 @@ const Portfolio = () => {
   return (
     <section
       ref={containerRef}
-      className="relative bg-black"
-      style={{ minHeight: "220vh" }}
+      className="relative "
+      style={{ minHeight: "220vh", width: "100%" }}
     >
       <div
-        className="min-h-screen text-white p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-40"
+        // className="min-h-screen text-white p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-40"
         style={{
           backgroundImage: "url('/background/portfolio_bg.png')",
           perspective: "1000px",
+          // backgroundColor:"red"
+          width: "100%",
         }}
       >
         <motion.div
@@ -197,10 +199,12 @@ const Portfolio = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          style={{ width: "100%" }}
         >
           <motion.div
             className="mb-8 flex justify-center"
             variants={itemVariants}
+            style={{ width: "100%" }}
           >
             <motion.button
               className="button"
@@ -285,7 +289,6 @@ const Portfolio = () => {
             </motion.div>
           </motion.div>
 
-          {/* Portfolio Cards with Stacking Effect */}
           <div className="relative">
             {portfolioData.map((card, index) => (
               <div key={index} className="mb-10" style={getCardStyle(index)}>
