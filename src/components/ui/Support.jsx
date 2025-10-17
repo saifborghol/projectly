@@ -157,7 +157,7 @@ const Support = () => {
           >
             <motion.div className="relative z-10">
               <Image
-                src="/support/support1.png"
+                src="/support/support1.jpg"
                 alt="Support 1"
                 width={140}
                 height={140}
@@ -172,7 +172,7 @@ const Support = () => {
               style={{ transform: "rotate(-5deg)" }}
             >
               <Image
-                src="/support/support2.png"
+                src="/support/support2.jpg"
                 alt="Support 2"
                 width={140}
                 height={140}
@@ -212,7 +212,7 @@ const Support = () => {
 
             <motion.div className="relative z-15 sm:-ml-10 sm:mt-4">
               <Image
-                src="/support/support3.png"
+                src="/support/support3.jpg"
                 alt="Support 3"
                 width={140}
                 height={140}
@@ -222,7 +222,7 @@ const Support = () => {
 
             <motion.div className="relative z-25 sm:-ml-12 sm:-mt-8">
               <Image
-                src="/support/support4.png"
+                src="/support/support4.jpg"
                 alt="Support 4"
                 width={140}
                 height={140}
@@ -232,7 +232,7 @@ const Support = () => {
 
             <motion.div className="relative z-20 sm:-ml-10 sm:mt-6">
               <Image
-                src="/support/support5.png"
+                src="/support/support5.jpg"
                 alt="Support 5"
                 width={140}
                 height={140}
@@ -242,7 +242,7 @@ const Support = () => {
 
             <motion.div className="relative z-30 sm:-ml-12 sm:-mt-10">
               <Image
-                src="/support/support6.png"
+                src="/support/support6.jpg"
                 alt="Support 6"
                 width={140}
                 height={140}
@@ -257,7 +257,7 @@ const Support = () => {
               style={{ transform: "rotate(8deg)" }}
             >
               <Image
-                src="/support/support7.png"
+                src="/support/support7.jpg"
                 alt="Support 7"
                 width={140}
                 height={140}

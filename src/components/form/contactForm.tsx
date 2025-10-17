@@ -13,15 +13,26 @@ const ContactForm = () => {
     message: "",
   });
 
-  const handleInputChange = (e) => {
+  interface ContactFormData {
+    firstName: string;
+    lastName: string;
+    email: string;
+    country: string;
+    companyType: string;
+    message: string;
+  }
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData((prev: ContactFormData) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
@@ -132,7 +143,7 @@ const ContactForm = () => {
             </div>
             <div>
               <label className="block text-white/80 text-sm font-medium mb-2 text-left">
-                What's the type of your company?*
+                What&#39;s the type of your company?*
               </label>
               <select
                 name="companyType"

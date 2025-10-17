@@ -4,55 +4,60 @@ import "../../app/globals.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
-interface AppIcon {
-  id: number;
-  name: string;
-  imageUrl: string;
-  bgColor: string;
-}
+export const texts = [
+  "Data Analytics",
+  "ChatOps",
+  "Intelligence",
+  "Cloud Infrastructure",
+  "Cognitive AI",
+  "Smart Automation",
+  "ML Pipeline",
+  "Neural Networks",
+  "Deep Learning",
+  "Microservices",
+  "DevOps",
+];
 
-interface FloatingText {
-  id: number;
-  text: string;
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  speed: number;
-}
-
-const RadialSwiper: React.FC = () => {
-  const [mounted, setMounted] = useState<boolean>(false);
-  const [rotation, setRotation] = useState<number>(0);
-  const [floatingTexts, setFloatingTexts] = useState<FloatingText[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
-
+const RadialSwiper = () => {
+  const [mounted, setMounted] = useState(false);
+  const [rotation, setRotation] = useState(0);
+  const [floatingTexts, setFloatingTexts] = useState([]);
+  const containerRef = useRef(null);
+  const options = {
+    type: "loop",
+    perPage: 4, // show 4 slides at once
+    perMove: 1,
+    gap: "0.5rem",
+    autoplay: true, // enable autoplay
+    interval: 1, // time between moves (ms)
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    resetProgress: false,
+    arrows: false, // hide prev/next buttons
+    pagination: false, // hide pagination / dots
+    drag: false, // optional: disable dragging so it strictly autoplays
+    // responsive behavior
+    breakpoints: {
+      1024: { perPage: 3 },
+      768: { perPage: 2 },
+      420: { perPage: 1 },
+    },
+    // keep slide focus centered if you want: // focus: 'center'
+  };
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    const texts = [
-      "Data Analytics",
-      "ChatOps",
-      "Intelligence",
-      "Cloud Infrastructure",
-      "Cognitive AI",
-      "Smart Automation",
-      "ML Pipeline",
-      "Neural Networks",
-      "Deep Learning",
-      "Microservices",
-      "DevOps",
-    ];
-
     const cardWidth = 280;
     const lineHeight = 45;
     const startY = 30;
     const textsPerLine = 3;
 
-    const initialTexts: FloatingText[] = texts.map((text, index) => {
+    const initialTexts = texts.map((text, index) => {
       const lineIndex = Math.floor(index / textsPerLine);
       const positionInLine = index % textsPerLine;
       const speed = 1.0 + Math.random() * 1.5;
@@ -105,7 +110,7 @@ const RadialSwiper: React.FC = () => {
     return () => clearInterval(interval);
   }, [mounted]);
 
-  const appIcons: AppIcon[] = [
+  const appIcons = [
     {
       id: 3,
       name: "SaaS Dashboard",
@@ -200,7 +205,7 @@ const RadialSwiper: React.FC = () => {
         className="flex items-center justify-center cursor-grab active:cursor-grabbing"
       >
         <div className="relative w-full h-[900px] z-10">
-          {appIcons.map((app: AppIcon, index: number) => {
+          {appIcons.map((app, index) => {
             const angle = (index * 360) / appIcons.length + rotation;
             const normalizedAngle = ((angle % 360) + 360) % 360;
             const isTopHalf = normalizedAngle > 180 || normalizedAngle < 10;
@@ -470,23 +475,87 @@ const RadialSwiper: React.FC = () => {
               className="rounded-xl p-4 h-32 flex items-center justify-center relative overflow-hidden"
             >
               {/* Floating text elements */}
-              {floatingTexts.map((floatingText) => (
-                <div
-                  key={floatingText.id}
-                  className="absolute text-sm text-white/30 px-3 py-1.5 rounded-full border border-white/15 whitespace-nowrap pointer-events-none select-none bg-white/5 backdrop-blur-sm"
-                  style={{
-                    left: `${floatingText.x}px`,
-                    top: `${floatingText.y}px`,
-                    fontSize: "12px",
-                    fontWeight: "500",
-                    transition: "all 0.05s linear",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
-                  }}
-                >
-                  {floatingText.text}
-                </div>
-              ))}
-
+              <div
+                style={{
+                  position: "relative",
+                  opacity: 0.9,
+                  width: "100%",
+                }}
+                className="w-full"
+              >
+                <Splide options={options} aria-label="features carousel">
+                  <SplideTrack>
+                    {texts.map((txt, idx) => (
+                      <SplideSlide
+                        key={`${txt}-${idx}`}
+                        className="flex items-center justify-center"
+                      >
+                        <div
+                          className="px-3 py-4 rounded-md select-none"
+                          style={{
+                            width: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <p className="text-white text-sm md:text-base font-medium text-center">
+                            {txt}
+                          </p>
+                        </div>
+                      </SplideSlide>
+                    ))}
+                  </SplideTrack>
+                </Splide>
+                <Splide options={options} aria-label="features carousel">
+                  <SplideTrack>
+                    {texts.map((txt, idx) => (
+                      <SplideSlide
+                        key={`${txt}-${idx}`}
+                        className="flex items-center justify-center"
+                      >
+                        <div
+                          className="px-3 py-4 rounded-md select-none"
+                          style={{
+                            width: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <p className="text-white text-sm md:text-base font-medium text-center">
+                            {txt}
+                          </p>
+                        </div>
+                      </SplideSlide>
+                    ))}
+                  </SplideTrack>
+                </Splide>
+                <Splide options={options} aria-label="features carousel">
+                  <SplideTrack>
+                    {texts.map((txt, idx) => (
+                      <SplideSlide
+                        key={`${txt}-${idx}`}
+                        className="flex items-center justify-center"
+                      >
+                        <div
+                          className="px-3 py-4 rounded-md select-none"
+                          style={{
+                            width: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <p className="text-white text-sm md:text-base font-medium text-center">
+                            {txt}
+                          </p>
+                        </div>
+                      </SplideSlide>
+                    ))}
+                  </SplideTrack>
+                </Splide>
+              </div>
               {/* Main icon */}
               <Image
                 src="/background/bg-block-card-2.png"
@@ -494,6 +563,7 @@ const RadialSwiper: React.FC = () => {
                 width={74}
                 height={74}
                 className="relative z-10"
+                style={{ position: "absolute" }}
               />
             </div>
           </motion.div>
