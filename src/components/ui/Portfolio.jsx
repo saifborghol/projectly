@@ -183,15 +183,18 @@ const Portfolio = () => {
     <section
       ref={containerRef}
       className="relative "
-      style={{ minHeight: "220vh", width: "100%" }}
+      style={{ minHeight: "220vh", width: "100%",padding:"50px 25px" }}
     >
       <div
         // className="min-h-screen text-white p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-40"
         style={{
           backgroundImage: "url('/background/portfolio_bg.png')",
-          perspective: "1000px",
+          // perspective: "1000px",
           // backgroundColor:"red"
           width: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <motion.div
@@ -291,7 +294,7 @@ const Portfolio = () => {
 
           <div className="relative">
             {portfolioData.map((card, index) => (
-              <div key={index} className="mb-10" style={getCardStyle(index)}>
+              <div key={index} className="pb-24" style={getCardStyle(index)}>
                 <motion.div
                   className="grid md:grid-cols-3 gap-6 border-2 border-[#191919] rounded-xl bg-black p-6 transition-all duration-300 ease-out"
                   variants={cardVariants}

@@ -8,8 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +21,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   scroll-margin-block: 0;
 }
 
@@ -74,8 +74,11 @@ body {
   transform: translate(-50%, -50%);
 
   /* width: 100%; */
-  width: 165px;
+  /* width: 165px; */
+  width: 100%;
   height: 40px;
+  padding-right: 15px;
+  padding-left: 15px;
   background-color: var(--black-700);
 
   border-radius: var(--border_radius);
@@ -228,4 +231,497 @@ body {
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+/* ------------------------------------------------*/
+/* Projects Pinned Component Styles */
+/* ------------------------------------------------*/
+
+/* CSS Variables - Add these to your global styles or component */
+
+
+
+
+/* Dark mode support */
+
+
+/* ------------------------------------------------*/
+/* Section and Container Styles */
+/* ------------------------------------------------*/
+.mxd-section {
+  position: relative;
+  width: 100%;
+  min-width: 360px;
+}
+
+.mxd-section.padding-pre-stack {
+  padding-bottom: 11rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-section.padding-pre-stack {
+    padding-bottom: 10rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-section.padding-pre-stack {
+    padding-bottom: 10rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-section.padding-pre-stack {
+    padding-bottom: 11rem;
+  }
+}
+
+.mxd-container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+
+.mxd-container.grid-container {
+  padding: 0 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-container {
+    padding: 0 6rem;
+  }
+  .mxd-container.grid-container {
+    padding: 0 4.5rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-container {
+    padding: 0 9rem;
+  }
+  .mxd-container.grid-container {
+    padding: 0 7.5rem;
+  }
+}
+
+.mxd-block {
+  position: relative;
+}
+
+.mxd-grid-item {
+  padding: 0 1.5rem;
+  margin-top: 3rem;
+}
+
+.mxd-grid-item.no-margin {
+  margin: 0;
+}
+
+.mxd-grid-item.no-margin-desktop {
+  margin-top: 3rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-grid-item.no-margin-desktop {
+    margin: 0;
+  }
+}
+
+/* ------------------------------------------------*/
+/* Typography */
+/* ------------------------------------------------*/
+
+
+
+
+/* ------------------------------------------------*/
+/* Section Title Component */
+/* ------------------------------------------------*/
+.mxd-section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+  text-align: left;
+  margin-bottom: 7rem;
+}
+
+.mxd-section-title.no-margin-desktop {
+  margin-bottom: 7rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-section-title {
+    margin-bottom: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-section-title {
+    margin-bottom: 6.7rem;
+  }
+  .mxd-section-title.no-margin-desktop {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-section-title {
+    gap: 4.2rem;
+    margin-bottom: 6.7rem;
+  }
+}
+
+.mxd-section-title__descr {
+  padding-right: 6rem;
+  margin-top: 2.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-section-title__descr {
+    margin-top: 1.8rem;
+    max-width: 620px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-section-title__descr {
+    margin-top: 2.8rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-section-title__descr {
+    margin-top: 2.5rem;
+  }
+}
+
+.mxd-section-title__controls {
+  display: flex;
+  margin-top: 3.2rem;
+}
+
+/* ------------------------------------------------*/
+/* Pinned Projects Layout */
+/* ------------------------------------------------*/
+.mxd-pinned-projects {
+  position: relative;
+}
+
+.mxd-pinned-projects__static-inner {
+  text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-pinned-projects__static-inner {
+    position: sticky;
+    top: 0;
+    padding-top: 6rem;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-pinned-projects__static-inner {
+    padding-top: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-pinned-projects__scroll {
+    padding-top: 6rem;
+    grid-column-gap: 1.2rem;
+    grid-row-gap: 1.2rem;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-pinned-projects__scroll {
+    padding-top: 9rem;
+  }
+}
+
+.mxd-pinned-projects__scroll-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-pinned-projects__scroll-inner {
+    gap: 7rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-pinned-projects__scroll-inner {
+    gap: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-pinned-projects__scroll-inner {
+    gap: 11rem;
+  }
+}
+
+/* ------------------------------------------------*/
+/* Project Item Styles */
+/* ------------------------------------------------*/
+.mxd-project-item__media {
+  position: relative;
+  display: block;
+  margin-bottom: 1.4rem;
+  height: 460px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-project-item__media {
+    height: 600px;
+    margin-bottom: 2.3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-project-item__media {
+    height: 760px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-project-item__media {
+    height: 930px;
+  }
+}
+
+.mxd-project-item__preview {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  border-radius: var(--_radius-l);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-project-item__preview {
+    height: 600px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mxd-project-item__preview {
+    height: 760px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-project-item__preview {
+    height: 930px;
+  }
+}
+
+/* Image placeholders - Replace these with your actual images */
+.preview-image-1 {
+  background-image: url(https://dummyimage.com/1400x1400/5d5d5d/838383);
+}
+
+.preview-image-2 {
+  background-image: url(https://dummyimage.com/1400x1400/5d5d5d/838383);
+}
+
+.preview-image-3 {
+  background-image: url(https://dummyimage.com/1400x1400/5d5d5d/838383);
+}
+
+.preview-image-4 {
+  background-image: url(https://dummyimage.com/1400x1400/5d5d5d/838383);
+}
+
+.preview-image-5 {
+  background-image: url(https://dummyimage.com/1400x1400/5d5d5d/838383);
+}
+
+.mxd-project-item__tags {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.6rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-project-item__tags {
+    align-items: flex-start;
+    padding: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mxd-project-item__tags {
+    gap: 1.4rem;
+  }
+}
+
+.mxd-project-item__promo {
+  padding: 0 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-project-item__promo {
+    padding: 0 4rem;
+  }
+}
+
+.mxd-project-item__name a {
+  display: inline;
+  font: normal var(--fw-regular) 2.2rem/1.4 var(--_font-accent);
+  color: var(--t-medium);
+  text-decoration: none;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    linear-gradient(to right, var(--t-bright), var(--t-bright));
+  background-size: 100% 1px, 0 1px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms, color 300ms;
+}
+
+.mxd-project-item__name a:hover {
+  color: var(--t-bright);
+  background-size: 0 1px, 100% 1px;
+}
+
+.mxd-project-item__name a span {
+  font-weight: var(--fw-medium);
+  color: var(--t-bright);
+}
+
+@media only screen and (min-width: 768px) {
+  .mxd-project-item__name a {
+    font-size: 3rem;
+  }
+}
+
+/* ------------------------------------------------*/
+/* Tag Component Styles */
+/* ------------------------------------------------*/
+.tag {
+  display: inline-flex;
+  padding: 0.8rem 1.6rem;
+  font: normal var(--fw-regular) 1.4rem/1.2 var(--_font-default);
+  border-radius: var(--_radius-m);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  white-space: nowrap;
+  transition: all var(--_animspeed-medium) var(--_animbezier);
+}
+
+.tag.tag-default {
+  background-color: var(--base-tint);
+  color: var(--t-bright);
+}
+
+.tag.tag-permanent {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+@media only screen and (min-width: 1600px) {
+  .tag {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+/* ------------------------------------------------*/
+/* Button Styles */
+/* ------------------------------------------------*/
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 2.4rem;
+  font: normal var(--fw-medium) 1.6rem/1.2 var(--_font-default);
+  color: var(--t-bright);
+  background-color: transparent;
+  border: 1px solid var(--t-bright);
+  border-radius: var(--_radius-m);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--_animspeed-medium) var(--_animbezier);
+  overflow: hidden;
+}
+
+.btn.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--t-bright);
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--t-bright);
+}
+
+.btn i {
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 1600px) {
+  .btn {
+    padding: 1.6rem 2.8rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* ------------------------------------------------*/
+/* Animation Classes (Optional) */
+/* ------------------------------------------------*/
+.anim-uni-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For staggered animations */
+.anim-uni-in-up:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.anim-uni-in-up:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.anim-uni-in-up:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.anim-uni-in-up:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.anim-uni-in-up:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Parallax effect for images (requires JavaScript) */
+.parallax-img-small {
+  transition: transform 0.3s ease-out;
 }

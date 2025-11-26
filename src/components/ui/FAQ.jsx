@@ -63,9 +63,9 @@ const FAQ = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black py-20 overflow-hidden overflow-x-clip px-4 sm:px-6 lg:px-10">
+    <section className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden overflow-x-clip px-4 sm:px-6 lg:px-10">
       <div
-        className="min-h-screen bg-black text-white bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center w-full overflow-x-clip"
+        className="min-h-screen text-white bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center w-full overflow-x-clip"
         style={{
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}

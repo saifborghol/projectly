@@ -15,7 +15,7 @@ const partnerLogos = [
 
 const Testimonials = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full px-40 bg-black pb-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full px-40 pb-20">
       <div
         className=" relative  bg-[#080808] py-20 rounded-[8px]"
         style={{

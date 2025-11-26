@@ -3,14 +3,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const StickyScroll = ({ content, contentClassName }) => {
   const [activeCard, setActiveCard] = useState(0);
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
-    container: ref,
-    offset: ["start start", "end start"],
+    target: ref,
+    offset: ["start start", "end end"],
   });
 
   const cardLength = content.length;
@@ -48,33 +49,28 @@ export const StickyScroll = ({ content, contentClassName }) => {
   const rightPane = content[safeIndex]?.content ?? null;
 
   return (
-    <motion.div
-      className="relative flex h-[40rem] justify-center space-x-30 overflow-y-auto  no-scrollbar"
-      ref={ref}
-    >
-      <div className="relative flex items-start px-4">
+    <div className="relative flex justify-center gap-10 px-4">
+      <motion.div
+        className="relative flex-1 max-w-2xl overflow-y-auto no-scrollbar"
+        ref={ref}
+      >
         <div>
           {content.map((item, index) => {
             const key = `sc-${index}`;
             const hasCard = !!item.card;
 
-            return (
-              <div key={key}>
-                {hasCard &&
-                  item.card}
-              </div>
-            );
+            return <div key={key}>{hasCard && item.card}</div>;
           })}
           <div className="h-40" />
         </div>
-      </div>
+      </motion.div>
 
       <div
+        className="sticky top-50 self-start h-fit"
         // style={{ background: backgroundGradient }}
-        className={cn("sticky top-10 ", contentClassName)}
       >
         {rightPane}
       </div>
-    </motion.div>
+    </div>
   );
 };

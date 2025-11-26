@@ -5,7 +5,7 @@ import ContactForm from "../form/contactForm";
 
 const Collaborate = () => {
   return (
-    <div className="pt-15 pb-40 flex flex-col items-center text-center bg-black">
+    <div className="pt-15 pb-40 flex flex-col items-center text-center">
       <hr
         className="w-full border-0 h-px mb-8"
         style={{

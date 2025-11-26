@@ -18,7 +18,7 @@ const itemVariants = {
 
 const Join = () => {
   return (
-    <section className="relative  flex items-center justify-center overflow-hidden w-full px-40 bg-black">
+    <section className="relative  flex items-center justify-center overflow-hidden w-full px-40">
       <div
         className="w-full bg-[#080808] py-18 "
         style={{

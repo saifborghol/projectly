@@ -53,9 +53,9 @@ const Support = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-40 bg-black pb-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-40 pb-20">
       <div
-        className="min-h-screen bg-black text-white p-4 sm:p-6 lg:p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
+        className="min-h-screen  text-white p-4 sm:p-6 lg:p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
         style={{
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}

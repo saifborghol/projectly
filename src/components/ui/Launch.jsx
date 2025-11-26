@@ -17,7 +17,7 @@ const itemVariants = {
 
 const Launch = () => {
   return (
-    <div className="flex justify-center items-center py-8 sm:py-12 lg:py-20 w-full bg-black px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-center items-center py-8 sm:py-12 lg:py-20 w-full px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl border-2 border-[#202020] rounded-[16px] sm:rounded-[20px] overflow-hidden">
         {/* Background Image Section */}
         <div

@@ -198,7 +198,7 @@ const RadialSwiper = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative w-full h-full pt-24 overflow-hidden bg-black">
+    <div className="relative w-full h-full pt-24 overflow-hidden">
       {/* Main radial container */}
       <div
         ref={containerRef}

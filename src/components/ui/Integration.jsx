@@ -49,9 +49,9 @@ const integrationLogos = [
 
 const Integration = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-40 bg-black py-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-40 py-20">
       <div
-        className="min-h-screen bg-black text-white p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
+        className="min-h-screen text-white p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
         style={{
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}
