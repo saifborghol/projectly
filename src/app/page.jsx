@@ -15,10 +15,12 @@ import Collaborate from "@/components/ui/Collaborate";
 import FAQ from "@/components/ui/FAQ";
 import Join from "@/components/ui/join";
 import SEO from "@/components/SEO";
+import { CustomCursor } from "@/components/CustomCursor";
 
 export default function Home() {
   return (
     <main className="relative">
+      <CustomCursor />
       <SEO />
       <Navbar />
       <Hero />
