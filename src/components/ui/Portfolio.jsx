@@ -181,6 +181,7 @@ const Portfolio = () => {
 
   return (
     <section
+      id="portfolio"
       ref={containerRef}
       className="relative "
       style={{ minHeight: "220vh", width: "100%",padding:"50px 25px" }}

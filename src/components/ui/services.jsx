@@ -7,7 +7,7 @@ import LightRays from "../LightRays";
 
 export default function Services() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-40">
+    <section id="services" className="relative min-h-screen flex items-center justify-center overflow-hidden px-40">
       <div
         className=" relative  bg-[#080808] py-20 rounded-[8px]"
         style={{

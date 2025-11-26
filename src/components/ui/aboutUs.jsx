@@ -8,7 +8,7 @@ import ScrollReveal from "../ScrollReveal";
 
 export default function AboutUs() {
   return (
-    <section className="relative min-h-150 flex items-center justify-center ">
+    <section id="about" className="relative min-h-150 flex items-center justify-center ">
       <div className="max-w-6xl mx-auto text-center">
         {/* Badge */}
         <motion.div
