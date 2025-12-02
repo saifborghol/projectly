@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import LogoLoop from "../LogoLoop";
+import { GradientOrbs } from "../Background";
 
 // Partner logos configuration
 const partnerLogos = [
@@ -16,14 +17,17 @@ const partnerLogos = [
 export default function Hero() {
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800 pt-24">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+        {/* Animated gradient orbs */}
+        <GradientOrbs />
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className="mb-8 mt-14"
           >
             <div
               className="inline-flex items-center rounded-[40px]"
@@ -135,7 +139,7 @@ export default function Hero() {
                   "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%)",
               }}
             />
-
+            
             {/* LogoLoop Container */}
             <div
               style={{

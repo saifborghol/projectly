@@ -221,12 +221,11 @@ const content = [
     ),
     content: (
       <motion.div
-        className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.8, delay: 0.3 }}
-        style={{ width: "528px" }}
+        // style={{ width: "528px" }}
       >
         <Image
           src="/background/projecly_bg.jpg"
@@ -321,12 +320,11 @@ const content = [
     ),
     content: (
       <motion.div
-        className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.8, delay: 0.3 }}
-        style={{ width: "528px" }}
+        // style={{ width: "528px" }}
       >
         <Image
           src="/background/projecly_bg.jpg"
@@ -421,12 +419,11 @@ const content = [
     ),
     content: (
       <motion.div
-        className="mb-8 sm:mb-12 mt-8 lg:mt-0 flex justify-center lg:justify-start w-full lg:w-1/2"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.8, delay: 0.3 }}
-        style={{ width: "528px" }}
+        // style={{ width: "528px" }}
       >
         <Image
           src="/background/projecly_bg.jpg"
@@ -441,7 +438,7 @@ const content = [
 ];
 const Projecly = () => {
   return (
-    <div style={{ backgroundColor:"black" }}>
+    <div>
       <StickyScroll content={content} />
     </div>
   );
