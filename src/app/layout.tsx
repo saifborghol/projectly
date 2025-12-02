@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-// @ts-expect-error: Importing global CSS in Next.js app directory is not typed
 import "./globals.css";
 import Background from "@/components/Background";
 
