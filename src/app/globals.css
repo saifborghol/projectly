@@ -126,7 +126,7 @@ body {
 }
 
 .button .dots_border {
-  --size_border: calc(100% + 2px);
+  --size_border: calc(100%);
 
   overflow: hidden;
 

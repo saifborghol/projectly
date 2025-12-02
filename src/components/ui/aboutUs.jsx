@@ -5,13 +5,17 @@ import { motion } from "framer-motion";
 import "../../app/globals.css";
 import Image from "next/image";
 import ScrollReveal from "../ScrollReveal";
+import TagSections from "./tagSections";
 
 export default function AboutUs() {
   return (
-    <section id="about" className="relative min-h-150 flex items-center justify-center ">
+    <section
+      id="about"
+      className="relative min-h-150 flex items-center justify-center "
+    >
       <div className="max-w-6xl mx-auto text-center">
         {/* Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -31,8 +35,19 @@ export default function AboutUs() {
               <span className="text_button">About Us</span>
             </button>
           </div>
-        </motion.div>
-
+        </motion.div> */}
+        <TagSections
+          img={
+            <Image
+              src="/icons/finger-print.png"
+              alt="Finger Print"
+              width={18}
+              height={18}
+            />
+          }
+          title="About Us"
+          className="mb-5"
+        />
         {/* Main Heading with ScrollReveal */}
         <ScrollReveal
           baseOpacity={0.15}

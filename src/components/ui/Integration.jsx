@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import LogoLoop from "../LogoLoop";
+import TagSections from "./tagSections";
 
 const itemVariants = {
   hidden: { y: 50, opacity: 0 },
@@ -56,7 +57,7 @@ const Integration = () => {
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}
       >
-        <motion.div
+        {/* <motion.div
           className="mb-8 flex justify-center"
           variants={itemVariants}
         >
@@ -81,8 +82,19 @@ const Integration = () => {
             </motion.div>
             <span className="text_button">Integrations</span>
           </motion.button>
-        </motion.div>
-
+        </motion.div> */}
+        <TagSections
+          img={
+            <Image
+                src="/icons/fin.svg"
+                alt="Finger Print"
+                width={18}
+                height={18}
+              />
+          }
+          title="Integrations"
+          className="mb-8 mt-2.5"
+        />
         <motion.div className="mb-12 text-center" variants={itemVariants}>
           <motion.h1
             className="font-base mb-6 leading-[50px] tracking-wide"

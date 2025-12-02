@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import ContactForm from "../form/contactForm";
+import TagSections from "./tagSections";
 
 const Collaborate = () => {
   return (
@@ -13,13 +14,18 @@ const Collaborate = () => {
             "linear-gradient(to right, transparent 0%, #FFFFFF1A , transparent 100%)",
         }}
       />
-      <button className="button mb-6">
+      {/* <button className="button mb-6">
         <div className="dots_border"></div>
         <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
           <p className="font-bold text-[10px]">24/7</p>
         </div>
         <span className="text_button">Collaborate With Us</span>
-      </button>
+      </button> */}
+      <TagSections
+        img={<p className="font-bold text-[14px]">24/7</p>}
+        title="Collaborate With Us"
+        className="mb-6 sm:mb-8 flex justify-start w-fit"
+      />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

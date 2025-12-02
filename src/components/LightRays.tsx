@@ -94,8 +94,15 @@ const LightRays = ({
   className = "",
 }: LightRaysProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  type UniformValue = number | number[] | boolean | [number, number] | [number, number, number];
-  const uniformsRef = useRef<Record<string, { value: UniformValue }> | null>(null);
+  type UniformValue =
+    | number
+    | number[]
+    | boolean
+    | [number, number]
+    | [number, number, number];
+  const uniformsRef = useRef<Record<string, { value: UniformValue }> | null>(
+    null
+  );
   const rendererRef = useRef<Renderer | null>(null);
   const mouseRef = useRef({ x: 0.5, y: 0.5 });
   const smoothMouseRef = useRef({ x: 0.5, y: 0.5 });
@@ -322,15 +329,15 @@ void main() {
           const smoothing: number = 0.92;
 
           smoothMouseRef.current.x =
-        smoothMouseRef.current.x * smoothing +
-        mouseRef.current.x * (1 - smoothing);
+            smoothMouseRef.current.x * smoothing +
+            mouseRef.current.x * (1 - smoothing);
           smoothMouseRef.current.y =
-        smoothMouseRef.current.y * smoothing +
-        mouseRef.current.y * (1 - smoothing);
+            smoothMouseRef.current.y * smoothing +
+            mouseRef.current.y * (1 - smoothing);
 
           uniforms.mousePos.value = [
-        smoothMouseRef.current.x,
-        smoothMouseRef.current.y,
+            smoothMouseRef.current.x,
+            smoothMouseRef.current.y,
           ];
         }
 

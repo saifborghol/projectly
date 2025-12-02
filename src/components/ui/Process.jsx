@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import TagSections from "./tagSections";
 
 const itemVariants = {
   hidden: { y: 50, opacity: 0 },
@@ -59,7 +60,7 @@ const Process = () => {
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}
       >
-        <motion.div
+        {/* <motion.div
           className="mb-8 flex justify-center"
           variants={itemVariants}
         >
@@ -85,8 +86,20 @@ const Process = () => {
             </motion.div>
             <span className="text_button">Our Process</span>
           </motion.button>
-        </motion.div>
-
+        </motion.div> */}
+        <TagSections
+          img={
+            <Image
+              src="/icons/cpu.svg"
+              alt="Finger Print"
+              width={18}
+              height={18}
+              className="drop-shadow-md"
+            />
+          }
+          title="Our Process"
+          className="mb-8 mt-2.5"
+        />
         <motion.div className="mb-12 text-center" variants={itemVariants}>
           <motion.h1
             className="font-base mb-6 leading-[50px] tracking-wide"

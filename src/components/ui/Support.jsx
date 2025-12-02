@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import TagSections from "./tagSections";
 
 const itemVariants = {
   hidden: { y: 50, opacity: 0 },
@@ -60,7 +61,7 @@ const Support = () => {
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}
       >
-        <motion.div
+        {/* <motion.div
           className="mb-6 sm:mb-8 flex justify-center"
           variants={itemVariants}
         >
@@ -85,8 +86,19 @@ const Support = () => {
             </motion.div>
             <span className="text_button">24/7 Support</span>
           </motion.button>
-        </motion.div>
-
+        </motion.div> */}
+        <TagSections
+          img={
+            <Image
+              src="/icons/headset.svg"
+              alt="Finger Print"
+              width={18}
+              height={18}
+            />
+          }
+          title="24/7 Support"
+          className="mt-5 mb-10"
+        />
         <motion.div
           className="mb-8 sm:mb-12 text-center px-4"
           variants={itemVariants}

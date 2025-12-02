@@ -4,14 +4,18 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import LightRays from "../LightRays";
+import TagSections from "./tagSections";
 
 export default function Services() {
   return (
-    <section id="services" className="relative min-h-screen flex items-center justify-center overflow-hidden px-40">
+    <section
+      id="services"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-40"
+    >
       <div
-        className=" relative  bg-[#080808] py-20 rounded-[8px]"
+        className=" relative  bg-[#080808] py-15 rounded-[8px]"
         style={{
-          backgroundSize: "cover,70%",
+          backgroundSize: "cover,100%",
           backgroundPosition: "center, top",
           backgroundRepeat: "no-repeat, no-repeat",
         }}
@@ -19,20 +23,22 @@ export default function Services() {
         <div className="absolute top-0 left-0 w-full h-full">
           <LightRays
             raysOrigin="top-center"
-            raysColor="#7323a9"
-            raysSpeed={1.5}
-            lightSpread={0.8}
-            rayLength={1.2}
+            raysColor="#5534b2"
+            raysSpeed={0.5}
+            lightSpread={1.1}
+            rayLength={3}
+            fadeDistance={1.8}
             followMouse={true}
+            saturation={2}
             mouseInfluence={0.1}
-            noiseAmount={0.1}
-            distortion={0.05}
+            noiseAmount={0}
+            distortion={0}
             className="custom-rays"
           />
         </div>
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
+        <div className="relative z-50 max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
           {/* Services Badge */}
-          <button className="button mb-6">
+          {/* <button className="button mb-6">
             <div className="dots_border"></div>
             <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
               <Image
@@ -44,8 +50,20 @@ export default function Services() {
               />
             </div>
             <span className="text_button">Services</span>
-          </button>
-
+          </button> */}
+          <TagSections
+            img={
+              <Image
+                src="/icons/settings.png"
+                alt="settings"
+                width={18}
+                height={18}
+                className="mr-0.2"
+              />
+            }
+            title="Services"
+            className="mb-10 z-10"
+          />
           {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -89,7 +107,7 @@ export default function Services() {
             </Link>
           </motion.div>
         </div>
-        <div className="mt-14 flex flex-wrap lg:flex-row md:gap-6 w-fit justify-center items-center lg:items-stretch">
+        <div className="relative z-50 mt-14 flex flex-wrap lg:flex-row md:gap-6 w-fit justify-center items-center lg:items-stretch">
           {/* Card 1: Scalable Architecture */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -134,10 +152,10 @@ export default function Services() {
                 </div>
               </div>
               <h3 className="text-white text-md font-medium pl-12">
-                Custom Digital Product Development
+                AI Integration & Intelligent Solutions
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed pl-12">
-                Build What Your Vision Deserves.
+                Empower Your Teams With Intelligence.
               </p>
             </div>
             <div
@@ -152,7 +170,8 @@ export default function Services() {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
-              Future-ready codebases that grow with your business..
+              Your teams waste time on slow processes — we integrate
+              intelligence that eliminates friction.
             </p>
 
             {/* Visual Element */}
@@ -215,10 +234,10 @@ export default function Services() {
                 </div>
               </div>
               <h3 className="text-white text-md font-medium pl-12">
-                Custom Digital Product Development
+                Chatbots & Autonomous Agents
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed pl-12">
-                Build What Your Vision Deserves.
+                Support That Never Sleeps.
               </p>
             </div>
             <div
@@ -233,7 +252,8 @@ export default function Services() {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
-              Future-ready codebases that grow with your business..
+              Your support is overwhelmed — our autonomous agents respond and
+              execute continuously.
             </p>
 
             {/* Visual Element */}
@@ -296,10 +316,10 @@ export default function Services() {
                 </div>
               </div>
               <h3 className="text-white text-md font-medium pl-12">
-                Custom Digital Product Development
+                Data Governance & Quality
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed pl-12">
-                Build What Your Vision Deserves.
+                Transform Chaos Into Clarity.
               </p>
             </div>
             <div
@@ -314,7 +334,8 @@ export default function Services() {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
-              Future-ready codebases that grow with your business..
+              Your data is scattered — we eliminate chaos and secure your
+              decisions.
             </p>
 
             {/* Visual Element */}
@@ -377,10 +398,10 @@ export default function Services() {
                 </div>
               </div>
               <h3 className="text-white text-md font-medium pl-12">
-                Custom Digital Product Development
+                Digital Platforms & Product Engineering
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed pl-12">
-                Build What Your Vision Deserves.
+                Build Tools That Drive Growth.
               </p>
             </div>
             <div
@@ -395,7 +416,8 @@ export default function Services() {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
-              Future-ready codebases that grow with your business..
+              Your tools limit your growth — we create modern and
+              high-performing platforms.
             </p>
 
             {/* Visual Element */}
@@ -458,10 +480,10 @@ export default function Services() {
                 </div>
               </div>
               <h3 className="text-white text-md font-medium pl-12">
-                Custom Digital Product Development
+                Cloud & Scalable Infrastructure
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed pl-12">
-                Build What Your Vision Deserves.
+                Foundation Built For Scale.
               </p>
             </div>
             <div
@@ -476,7 +498,8 @@ export default function Services() {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
-              Future-ready codebases that grow with your business..
+              Your infrastructure isn't stable — we build a fast and secure
+              foundation.
             </p>
 
             {/* Visual Element */}
@@ -539,10 +562,10 @@ export default function Services() {
                 </div>
               </div>
               <h3 className="text-white text-md font-medium pl-12">
-                Custom Digital Product Development
+                24/7 Support & Outsourcing
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed pl-12">
-                Build What Your Vision Deserves.
+                Expert Teams, Always Available.
               </p>
             </div>
             <div
@@ -557,7 +580,8 @@ export default function Services() {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
-              Future-ready codebases that grow with your business..
+              You lack resources — we support you continuously with the right
+              experts.
             </p>
 
             {/* Visual Element */}

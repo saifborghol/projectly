@@ -5,6 +5,7 @@ import Image from "next/image";
 import TestimonialCard from "../card/testimonialCard";
 import LightRays from "../LightRays";
 import LogoLoop from "../LogoLoop";
+import TagSections from "./tagSections";
 
 const partnerLogos = [
   { src: "/partners/partner1.png", alt: "Partner 1", href: "#" },
@@ -17,7 +18,7 @@ const Testimonials = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full px-40 pb-20">
       <div
-        className=" relative  bg-[#080808] py-20 rounded-[8px]"
+        className=" relative  bg-[#080808] py-15 rounded-[8px]"
         style={{
           backgroundSize: "cover,70%",
           backgroundPosition: "center, top",
@@ -39,7 +40,7 @@ const Testimonials = () => {
           />
         </div>
         <div className="max-w-7xl mx-auto text-center flex flex-col items-center justify-center px-4">
-          <button className="button mb-6">
+          {/* <button className="button mb-6">
             <div className="dots_border"></div>
             <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
               <Image
@@ -51,8 +52,20 @@ const Testimonials = () => {
               />
             </div>
             <span className="text_button">Testimonials</span>
-          </button>
-
+          </button> */}
+          <TagSections
+            img={
+              <Image
+                src="/icons/user.svg"
+                alt="settings"
+                width={20}
+                height={20}
+                className="mr-0.2"
+              />
+            }
+            title="Testimonials"
+            className="mb-10 z-10"
+          />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

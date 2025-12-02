@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import LogoLoop from "../LogoLoop";
 import { GradientOrbs } from "../Background";
+import TagSections from "./tagSections";
 
 // Partner logos configuration
 const partnerLogos = [
@@ -17,13 +18,16 @@ const partnerLogos = [
 export default function Hero() {
   return (
     <>
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
+      >
         {/* Animated gradient orbs */}
         <GradientOrbs />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -58,7 +62,23 @@ export default function Hero() {
                 Next-Gen IT Agency
               </span>
             </div>
-          </motion.div>
+          </motion.div> */}
+          <TagSections
+            img={
+              <span
+                className="text-white px-4 py-1 rounded-full text-sm font-bold flex items-center justify-center"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #4F1AD6 0%, #8059E3 100%)",
+                  border: "2px ",
+                }}
+              >
+                2025
+              </span>
+            }
+            title=" Next-Gen IT Agency"
+            className="mt-10 mb-8"
+          />
 
           {/* Main Heading */}
           <motion.h1
@@ -67,10 +87,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-extralight text-white mb-6 leading-tight"
           >
-            Driving Digital Growth
+            We turn complexity into
             <br />
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Redefining the Future.
+              intelligent growth
             </span>
           </motion.h1>
 
@@ -82,10 +102,10 @@ export default function Hero() {
             className="max-w-2xl mx-auto mb-10"
           >
             <p className="text-gray-400 text-lg md:text-xl mb-2">
-              Creating latest solutions that redefine innovation.
+              AI Integration, Automation, Data Governance,
             </p>
             <p className="text-gray-400 text-lg md:text-xl">
-              Stay ahead with AI-powered technology for the future.
+              Chatbot, agent & Cloud Infrastructure.
             </p>
           </motion.div>
 
@@ -139,7 +159,7 @@ export default function Hero() {
                   "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%)",
               }}
             />
-            
+
             {/* LogoLoop Container */}
             <div
               style={{

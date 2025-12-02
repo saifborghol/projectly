@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import TagSections from "./tagSections.jsx";
 
 const Portfolio = () => {
   const containerRef = useRef(null);
@@ -148,33 +149,51 @@ const Portfolio = () => {
 
   const portfolioData = [
     {
+      title: "Discovery & Strategy",
+      description: "Identify What's Holding You Back.",
       features: [
-        "Modern Typography",
-        "User Friendly",
-        "Flexible CMS",
-        "SEO Optimized",
+        "Friction Point Analysis",
+        "Process Inefficiency Mapping",
+        "Priority Assessment",
+        "Strategic Roadmap",
       ],
-      tags: ["Business", "Agency"],
+      tags: ["Discovery", "Strategy"],
       images: [1, 2],
     },
     {
+      title: "Build",
+      description: "Design Systems That Scale.",
       features: [
-        "AI Integration",
-        "Responsive Design",
-        "Custom Layouts",
-        "Fast Loading",
+        "Custom Platform Architecture",
+        "Modern Solution Design",
+        "Scalable System Development",
+        "Future-Ready Engineering",
       ],
-      tags: ["E-commerce", "Portfolio"],
+      tags: ["Development", "Engineering"],
       images: [3, 4],
     },
     {
+      title: "Integrate",
+      description: "Connect, Automate, Deploy.",
       features: [
-        "Easy Customization",
-        "Interactive Elements",
-        "Retina Ready",
-        "High Performance",
+        "Seamless System Connection",
+        "Workflow Automation",
+        "Smart Deployment",
+        "End-to-End Integration",
       ],
-      tags: ["Business", "Agency"],
+      tags: ["Automation ", "Deployment"],
+      images: [5, 6],
+    },
+    {
+      title: "Improve",
+      description: "Measure, Optimize, Evolve.",
+      features: [
+        "Performance Monitoring",
+        "Continuous Optimization",
+        "Data-Driven Refinement",
+        "Ongoing Enhancement",
+      ],
+      tags: ["Analytics", "Optimization"],
       images: [5, 6],
     },
   ];
@@ -184,7 +203,7 @@ const Portfolio = () => {
       id="portfolio"
       ref={containerRef}
       className="relative "
-      style={{ minHeight: "220vh", width: "100%",padding:"50px 25px" }}
+      style={{ minHeight: "220vh", width: "100%", padding: "50px 25px" }}
     >
       <div
         // className="min-h-screen text-white p-8 bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-40"
@@ -210,13 +229,12 @@ const Portfolio = () => {
             variants={itemVariants}
             style={{ width: "100%" }}
           >
-            <motion.button
+            {/* <motion.button
               className="button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 2 }}
+              whileTap={{ scale: 1 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="dots_border"></div>
               <motion.div
                 className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center"
                 whileHover={{ rotate: 180 }}
@@ -229,8 +247,21 @@ const Portfolio = () => {
                   height={18}
                 />
               </motion.div>
-              <span className="text_button">Portfolio</span>
-            </motion.button>
+              <span className="text_button">Method</span>
+            </motion.button> */}
+
+            <TagSections
+              img={
+                <Image
+                  src="/icons/stack.svg"
+                  alt="Finger Print"
+                  width={18}
+                  height={18}
+                />
+              }
+              title="Method"
+              className="mt-15"
+            />
           </motion.div>
 
           <motion.div className="mb-12 text-center" variants={itemVariants}>
@@ -246,7 +277,7 @@ const Portfolio = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
               >
-                Showcasing Your Best
+                The Projecly Method™
               </motion.span>
               <motion.span
                 className="block text-[#FFFFFF99] text-[54px]"
@@ -254,7 +285,7 @@ const Portfolio = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
-                Work With Pure Precision
+                From Audit to Excellence
               </motion.span>
             </motion.h1>
 
@@ -264,11 +295,11 @@ const Portfolio = () => {
               transition={{ duration: 0.6, delay: 1.1 }}
             >
               <p className="text-[#FFFFFF99] text-[16px] mb-2 max-w-2xl mx-auto">
-                A portfolio is more than just projects it's your story, vision,
-                and
+                From identifying friction points to continuous optimization,
               </p>
               <p className="text-[#FFFFFF99] text-[16px] mb-8 max-w-2xl mx-auto">
-                expertise. Reboot ensures your work stands out with a rank.
+                we guide you through every phase of digital transformation with
+                precision and expertise.
               </p>
             </motion.div>
 
@@ -316,7 +347,7 @@ const Portfolio = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.div
-                      className="flex gap-5 items-center mb-6 pb-4 relative"
+                      className=" mb-6 pb-4 relative"
                       style={{
                         borderBottom: "1px solid transparent",
                         borderImage:
@@ -326,15 +357,16 @@ const Portfolio = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.2 }}
                     >
-                      <motion.span
+                      {/* <motion.span
                         className="text-gray-400 text-[16px] border border-[#4F1AD626] p-2 rounded-[4px] text-[#FFFFFF99] font-bold shadow-[0_10px_5px_-1px_#FFFFFF14] shadow-[inset_0_0_18px_0_#4F1AD62E]"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ duration: 0.3 }}
                       >
                         2025
-                      </motion.span>
-                      <h3 className="text-white font-semibold">
-                        Projecly Project {index + 1}
+                      </motion.span> */}
+                      <h3 className="text-white font-semibold">{card.title}</h3>
+                      <h3 className="text-gray-400 text-sm leading-relaxed">
+                        {card.description}
                       </h3>
                     </motion.div>
 

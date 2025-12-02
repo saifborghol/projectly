@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import TagSections from "./tagSections";
 
 export const texts = [
   "Data Analytics",
@@ -281,24 +282,32 @@ const RadialSwiper = () => {
         {/* Central content */}
         <div className="absolute flex flex-col items-center justify-center z-[100] cursor-auto select-text mt-[-250px]">
           {/* Feature badge */}
-          <button className="button mb-6">
+          {/* <button className="button mb-6">
             <div className="dots_border"></div>
             <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
               <Image src="/icons/flam.png" alt="flam" width={18} height={18} />
             </div>
             <span className="text_button">Features</span>
-          </button>
-
+          </button> */}
+          <TagSections
+            img={
+              <Image src="/icons/flam.png" alt="flam" width={18} height={18} />
+            }
+            title="Features"
+            className="mb-10"
+          />
           {/* Main heading */}
           <h1 className="text-6xl md:text-7xl font-medium text-white mb-6 tracking-tight text-center pointer-events-none">
-            Build for Impact
+            Built on Intelligence
           </h1>
 
           {/* Subtitle */}
           <p className="text-l text-gray-400 mb-12 text-center max-w-md leading-relaxed pointer-events-none">
-            Delivering cutting-edge functionality through
+            We engineer technology with purpose — smart, optimized, and driven
+            by data.
             <br />
-            intelligent digital design.
+            Your company benefits from precision, clarity, and intelligent
+            execution.
           </p>
 
           <motion.div

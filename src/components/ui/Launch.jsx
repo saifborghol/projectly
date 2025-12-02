@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import TagSections from "./tagSections";
 
 const itemVariants = {
   hidden: { y: 50, opacity: 0 },
@@ -44,7 +45,7 @@ const Launch = () => {
             backgroundRepeat: "no-repeat, no-repeat",
           }}
         >
-          <motion.div
+          {/* <motion.div
             className="mb-4 sm:mb-6 flex justify-start"
             variants={itemVariants}
           >
@@ -70,8 +71,20 @@ const Launch = () => {
               </motion.div>
               <span className="text_button">Launch Your Site</span>
             </motion.button>
-          </motion.div>
-
+          </motion.div> */}
+          <TagSections
+            img={
+               <Image
+                  src="/icons/cpu.svg"
+                  alt="Launch Icon"
+                  width={18}
+                  height={18}
+                  className="drop-shadow-md"
+                />
+            }
+            title="Launch Your Site"
+            className="mb-4 sm:mb-6 flex justify-start w-fit"
+          />
           <motion.div
             className="mb-6 sm:mb-8 text-left"
             variants={itemVariants}

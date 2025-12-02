@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { StickyScroll } from "../ui/sticky-scroll-reveal";
+import TagSections from "./tagSections";
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -59,7 +60,7 @@ const content = [
           }}
           // onWheel={onWheelPassThrough}
         >
-          <motion.div
+          {/* <motion.div
             className="mb-6 sm:mb-8 flex justify-start"
             variants={itemVariants}
             initial="hidden"
@@ -86,8 +87,19 @@ const content = [
               </motion.div>
               <span className="text_button">Projecly</span>
             </motion.button>
-          </motion.div>
-
+          </motion.div> */}
+          <TagSections
+            img={
+              <Image
+                src="/icons/finger-print.png"
+                alt="Finger Print"
+                width={20}
+                height={20}
+              />
+            }
+            title="Projecly"
+            className="mb-6 sm:mb-8 flex justify-start w-fit"
+          />
           <motion.div
             className="mb-8 sm:mb-12 text-left"
             variants={itemVariants}

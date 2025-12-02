@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import LightRays from "../LightRays";
+import TagSections from "./tagSections";
 
 const itemVariants = {
   hidden: { y: 50, opacity: 0 },
@@ -18,7 +19,10 @@ const itemVariants = {
 
 const Join = () => {
   return (
-    <section id="contact" className="relative  flex items-center justify-center overflow-hidden w-full px-40">
+    <section
+      id="contact"
+      className="relative  flex items-center justify-center overflow-hidden w-full px-40"
+    >
       <div
         className="w-full bg-[#080808] py-18 "
         style={{
@@ -32,19 +36,21 @@ const Join = () => {
         <div className="absolute top-0 left-0 w-full h-full">
           <LightRays
             raysOrigin="top-center"
-            raysColor="#7323a9"
-            raysSpeed={1.5}
-            lightSpread={0.8}
-            rayLength={1.2}
+            raysColor="#5534b2"
+            raysSpeed={0.5}
+            lightSpread={1.1}
+            rayLength={3}
+            fadeDistance={1.8}
             followMouse={true}
+            saturation={2}
             mouseInfluence={0.1}
-            noiseAmount={0.1}
-            distortion={0.05}
+            noiseAmount={0}
+            distortion={0}
             className="custom-rays"
           />
         </div>
-        <div className="max-w-7xl mx-auto text-center flex flex-col items-center justify-center px-4">
-          <button className="button mb-6">
+        <div className="relative z-50 max-w-7xl mx-auto text-center flex flex-col items-center justify-center px-4">
+          {/* <button className="button mb-6">
             <div className="dots_border"></div>
             <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
               <Image
@@ -56,8 +62,20 @@ const Join = () => {
               />
             </div>
             <span className="text_button">Join Us</span>
-          </button>
-
+          </button> */}
+          <TagSections
+            img={
+              <Image
+                src="/icons/verify.svg"
+                alt="settings"
+                width={20}
+                height={20}
+                className="mr-0.2"
+              />
+            }
+            title="Join Us"
+            className="mb-6 z-10"
+          />
           <motion.div className="text-left" variants={itemVariants}>
             <motion.h1
               className="font-base mb-6 leading-[50px] tracking-wide"
