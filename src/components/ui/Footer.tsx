@@ -49,7 +49,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/"
                   className="font-light text-sm text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   About
@@ -57,7 +57,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/portfolio"
+                  href="/"
                   className="font-light text-sm text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Portfolio
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/faq"
+                  href="/"
                   className="font-light text-sm text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   FAQ

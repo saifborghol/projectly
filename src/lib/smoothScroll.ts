@@ -1,4 +1,10 @@
 export const smoothScrollTo = (target: string, duration: number = 1000) => {
+  // Only handle anchor links (starting with #)
+  if (!target.startsWith('#') && target !== 'body') {
+    console.warn('smoothScrollTo only handles anchor links (#) or "body"');
+    return;
+  }
+
   // Start animation immediately
   let startTime: number | null = null;
   let startPosition: number;
@@ -15,10 +21,10 @@ export const smoothScrollTo = (target: string, duration: number = 1000) => {
       startTime = currentTime;
       startPosition = window.pageYOffset;
       
-      const element = target === "body" ? document.body : document.querySelector(target);
+      const element = target === "body" ? document?.body : document?.querySelector(target);
       if (!element) return;
       
-      targetPosition = target === "body" ? 0 : element.getBoundingClientRect().top + window.pageYOffset;
+      targetPosition = target === "body" ? 0 : element?.getBoundingClientRect().top + window.pageYOffset;
       distance = targetPosition - startPosition - (target === "body" ? 0 : 80);
     }
 

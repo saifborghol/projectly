@@ -5,26 +5,29 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { smoothScrollTo } from "@/lib/smoothScroll";
 
-const navItems = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Contact", href: "#contact" },
-];
-
-export default function Navbar() {
+export default function Navbar(navItems) {
+  console.log("🚀 ~ Navbar ~ navItems:", navItems.navItems)
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    if (href === "#") {
+    
+    // Check if it's a route (starts with /) or an anchor (starts with #)
+    if (href.startsWith('/')) {
+      // Navigate to route using Next.js router
+      router.push(href);
+    } else if (href === "#") {
+      // Scroll to top
       smoothScrollTo("body", 10);
-    } else {
+    } else if (href.startsWith('#')) {
+      // Smooth scroll to anchor
       smoothScrollTo(href, 10);
     }
+    
     setIsOpen(false);
   };
 
@@ -51,7 +54,7 @@ export default function Navbar() {
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item, index) => (
+              {navItems?.navItems?.map((item, index) => (
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, y: -20 }}
@@ -129,7 +132,7 @@ export default function Navbar() {
         style={{ overflow: "hidden" }}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 bg-black/20 backdrop-blur-md border-t border-white/20">
-          {navItems.map((item, index) => (
+          {navItems?.navItems?.map((item, index) => (
             <motion.div
               key={item.name}
               initial={{ opacity: 0, x: -20 }}
