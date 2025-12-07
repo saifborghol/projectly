@@ -107,8 +107,8 @@ export default function Services() {
             </Link>
           </motion.div>
         </div>
-        <div className="relative z-50 mt-14 flex flex-wrap lg:flex-row md:gap-6 w-fit justify-center items-center lg:items-stretch">
-          {/* Card 1: Scalable Architecture */}
+        <div className="relative z-50 mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1170px] mx-auto">
+          {/* Cards */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,19 +127,12 @@ export default function Services() {
             <div className="flex flex-col">
               <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                  <Image
+                    src="/services/ai-integration.svg"
+                    alt="AI Integration"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <div>
                   <Image
@@ -209,19 +202,12 @@ export default function Services() {
             <div className="flex flex-col">
               <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                  <Image
+                    src="/services/chatbot.svg"
+                    alt="AI Integration"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <div>
                   <Image
@@ -265,7 +251,7 @@ export default function Services() {
               className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
             >
               <Image
-                src="/services/digital-service.jpg"
+                src="/services/chatbot.jpg"
                 alt="bg Icon"
                 width={400}
                 height={200}
@@ -291,19 +277,12 @@ export default function Services() {
             <div className="flex flex-col">
               <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                  <Image
+                    src="/services/data.svg"
+                    alt="AI Integration"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <div>
                   <Image
@@ -347,7 +326,7 @@ export default function Services() {
               className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
             >
               <Image
-                src="/services/digital-service.jpg"
+                src="/services/data.jpg"
                 alt="bg Icon"
                 width={400}
                 height={200}
@@ -373,19 +352,12 @@ export default function Services() {
             <div className="flex flex-col">
               <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                  <Image
+                    src="/services/engineering.svg"
+                    alt="AI Integration"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <div>
                   <Image
@@ -429,7 +401,7 @@ export default function Services() {
               className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
             >
               <Image
-                src="/services/digital-service.jpg"
+                src="/services/platform.jpg"
                 alt="bg Icon"
                 width={400}
                 height={200}
@@ -455,19 +427,12 @@ export default function Services() {
             <div className="flex flex-col">
               <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                  <Image
+                    src="/services/infrastructure.svg"
+                    alt="AI Integration"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <div>
                   <Image
@@ -511,7 +476,7 @@ export default function Services() {
               className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
             >
               <Image
-                src="/services/digital-service.jpg"
+                src="/services/cloude.jpg"
                 alt="bg Icon"
                 width={400}
                 height={200}
@@ -537,19 +502,12 @@ export default function Services() {
             <div className="flex flex-col">
               <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                 <Image
+                    src="/services/support.svg"
+                    alt="AI Integration"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <div>
                   <Image
@@ -593,7 +551,7 @@ export default function Services() {
               className="w-[310px] h-[158px]  flex items-center justify-center overflow-hidden rounded-xl"
             >
               <Image
-                src="/services/digital-service.jpg"
+                src="/services/support.jpg"
                 alt="bg Icon"
                 width={400}
                 height={200}

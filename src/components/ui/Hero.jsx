@@ -9,10 +9,9 @@ import TagSections from "./tagSections";
 
 // Partner logos configuration
 const partnerLogos = [
-  { src: "/partners/partner1.png", alt: "Partner 1", href: "#" },
-  { src: "/partners/partner2.png", alt: "Partner 2", href: "#" },
-  { src: "/partners/partner3.png", alt: "Partner 3", href: "#" },
-  { src: "/partners/partner4.png", alt: "Partner 4", href: "#" },
+  { src: "/partners/partner2.png", alt: "Europe commission", href: "#" },
+  { src: "/partners/natoOtan.png", alt: "NATO OTAN", href: "#" },
+  { src: "/partners/orange.png", alt: "Orange", href: "#" },
 ];
 
 export default function Hero() {
@@ -148,7 +147,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative max-w-[450px] mx-auto"
+            className="relative max-w-[480px] mx-auto"
           >
             {/* Top border line */}
             <div
@@ -166,14 +165,15 @@ export default function Hero() {
                 height: "100px",
                 position: "relative",
                 overflow: "hidden",
+                opacity: 0.4,
               }}
             >
               <LogoLoop
                 logos={partnerLogos}
                 speed={50}
                 direction="left"
-                logoHeight={80}
-                gap={60}
+                logoHeight={60}
+                gap={40}
                 pauseOnHover
                 scaleOnHover
                 fadeOut

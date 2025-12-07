@@ -173,15 +173,45 @@ const RadialSwiper = () => {
       bgColor: "from-blue-400 to-blue-600",
     },
     {
-      id: 1,
+      id: 13,
       name: "CloudKit",
       imageUrl: "/gallery/gallery11.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
     {
-      id: 2,
+      id: 14,
       name: "Terminal",
       imageUrl: "/gallery/gallery12.jpg",
+      bgColor: "from-blue-400 to-blue-600",
+    },
+    {
+      id: 15,
+      name: "Link Manager",
+      imageUrl: "/gallery/gallery6.jpg",
+      bgColor: "from-blue-400 to-blue-600",
+    },
+    {
+      id: 16,
+      name: "Design Studio",
+      imageUrl: "/gallery/gallery7.jpg",
+      bgColor: "from-blue-400 to-blue-600",
+    },
+    {
+      id: 17,
+      name: "WWF App",
+      imageUrl: "/gallery/gallery8.jpg",
+      bgColor: "from-blue-400 to-blue-600",
+    },
+    {
+      id: 18,
+      name: "SaaS Dashboard",
+      imageUrl: "/gallery/gallery1.jpg",
+      bgColor: "from-blue-400 to-blue-600",
+    },
+    {
+      id: 19,
+      name: "Food Delivery",
+      imageUrl: "/gallery/gallery2.jpg",
       bgColor: "from-blue-400 to-blue-600",
     },
   ];
@@ -377,9 +407,7 @@ const RadialSwiper = () => {
                 </svg>
               </div>
               <h3 className="text-white text-xl font-semibold mb-3 text-center">
-                Scalable
-                <br />
-                Architecture
+                Built on Intelligence
               </h3>
             </div>
             <div
@@ -395,7 +423,9 @@ const RadialSwiper = () => {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm mb-6 leading-relaxed text-center">
-              Future-ready codebases that grow with your business..
+              We engineer technology with purpose — smart, optimized, and driven
+              by data. Your company benefits from precision, clarity, and
+              intelligent execution.
             </p>
 
             {/* Visual Element */}
@@ -452,9 +482,7 @@ const RadialSwiper = () => {
                 </svg>
               </div>
               <h3 className="text-white text-xl font-semibold mb-3 text-center">
-                Seamless
-                <br />
-                Cross-Platform Delivery
+                Powered by Performance
               </h3>
             </div>
             <div
@@ -470,7 +498,9 @@ const RadialSwiper = () => {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm mb-6 leading-relaxed text-center">
-              Web, mobile, and cloud — unified under one experience..
+              Everything we build is designed to perform: faster operations,
+              stronger systems, measurable impact. Your business scales because
+              the foundation is solid.
             </p>
 
             {/* Visual Element with Floating Texts */}
@@ -612,9 +642,7 @@ const RadialSwiper = () => {
                 </svg>
               </div>
               <h3 className="text-white text-xl font-semibold mb-3 text-center">
-                AI Chatbot
-                <br />
-                Assistant
+                Trusted by Leaders
               </h3>
             </div>
             <div
@@ -630,7 +658,9 @@ const RadialSwiper = () => {
             />
             {/* Description */}
             <p className="text-gray-400 text-sm mb-6 leading-relaxed text-center">
-              Future-ready codebases that grow with your business..
+              We operate with enterprise standards — security, reliability, and
+              delivery you can count on. This is technology built for
+              organizations that cannot afford failure.
             </p>
 
             {/* Visual Element */}

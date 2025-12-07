@@ -8,10 +8,9 @@ import LogoLoop from "../LogoLoop";
 import TagSections from "./tagSections";
 
 const partnerLogos = [
-  { src: "/partners/partner1.png", alt: "Partner 1", href: "#" },
-  { src: "/partners/partner2.png", alt: "Partner 2", href: "#" },
-  { src: "/partners/partner3.png", alt: "Partner 3", href: "#" },
-  { src: "/partners/partner4.png", alt: "Partner 4", href: "#" },
+  { src: "/partners/partner2.png", alt: "Europe commission", href: "#" },
+  { src: "/partners/natoOtan.png", alt: "NATO OTAN", href: "#" },
+  { src: "/partners/orange.png", alt: "Orange", href: "#" },
 ];
 
 const Testimonials = () => {
@@ -145,6 +144,7 @@ const Testimonials = () => {
                 position: "relative",
                 overflow: "hidden",
                 width: "100%",
+                opacity: 0.4,
               }}
             >
               <LogoLoop
