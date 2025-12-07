@@ -36,16 +36,15 @@ const pulseVariants = {
 };
 
 const integrationLogos = [
-  { src: "/integration/Container-1.png", alt: "Integration 1", href: "#" },
-  { src: "/integration/Container-2.png", alt: "Integration 2", href: "#" },
-  { src: "/integration/Container-4.png", alt: "Integration 4", href: "#" },
-  { src: "/integration/Container-5.png", alt: "Integration 5", href: "#" },
-  { src: "/integration/Container-6.png", alt: "Integration 6", href: "#" },
-  { src: "/integration/Container-7.png", alt: "Integration 7", href: "#" },
-  { src: "/integration/Container-8.png", alt: "Integration 8", href: "#" },
-  { src: "/integration/Container-9.png", alt: "Integration 9", href: "#" },
-  { src: "/integration/Container-10.png", alt: "Integration 10", href: "#" },
-  { src: "/integration/Container-11.png", alt: "Integration 11", href: "#" },
+  { src: "/integration/Container-1.png", alt: "Integration 1" },
+  { src: "/integration/Container-2.png", alt: "Integration 2" },
+  { src: "/integration/Container-4.png", alt: "Integration 4" },
+  { src: "/integration/Container-5.png", alt: "Integration 5" },
+  { src: "/integration/Container-6.png", alt: "Integration 6" },
+  { src: "/integration/Container-7.png", alt: "Integration 7" },
+  { src: "/integration/Container-8.png", alt: "Integration 8" },
+  { src: "/integration/Container-9.png", alt: "Integration 9" },
+  { src: "/integration/Container-10.png", alt: "Integration 10" },
 ];
 
 const Integration = () => {
@@ -86,11 +85,11 @@ const Integration = () => {
         <TagSections
           img={
             <Image
-                src="/icons/fin.svg"
-                alt="Finger Print"
-                width={18}
-                height={18}
-              />
+              src="/icons/fin.svg"
+              alt="Finger Print"
+              width={18}
+              height={18}
+            />
           }
           title="Integrations"
           className="mb-8 mt-2.5"

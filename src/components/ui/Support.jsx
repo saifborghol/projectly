@@ -37,18 +37,27 @@ const Support = () => {
 
   const supportCards = [
     {
-      title: "Fast Responses",
-      description: "Get timely answers to your questions.",
+      title: "Finance & Insurance",
+      description:
+        "Optimizing financial operations with secure, intelligent systems.",
       icon: "/icons/drop_phone.svg",
     },
     {
-      title: "Expert Guidance",
-      description: "Our team understands both design and tech.",
+      title: "Legal Services",
+      description:
+        "Automating legal workflows for faster, smarter case management.",
       icon: "/icons/star.svg",
     },
     {
-      title: "Continuous Help",
-      description: "Support doesn't stop after launch.",
+      title: "Public Sector & Government",
+      description:
+        "Delivering secure, reliable solutions for institutions and citizens.",
+      icon: "/icons/headset.svg",
+    },
+    {
+      title: "Healthcare & Medical",
+      description:
+        "Enhancing healthcare efficiency with intelligent digital solutions.",
       icon: "/icons/headset.svg",
     },
   ];
@@ -61,32 +70,6 @@ const Support = () => {
           backgroundImage: "url('/background/portfolio_bg.png')",
         }}
       >
-        {/* <motion.div
-          className="mb-6 sm:mb-8 flex justify-center"
-          variants={itemVariants}
-        >
-          <motion.button
-            className="button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="dots_border"></div>
-            <motion.div
-              className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center"
-              whileHover={{ rotate: 180 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-              <Image
-                src="/icons/headset.svg"
-                alt="Finger Print"
-                width={12}
-                height={12}
-              />
-            </motion.div>
-            <span className="text_button">24/7 Support</span>
-          </motion.button>
-        </motion.div> */}
         <TagSections
           img={
             <Image
@@ -169,11 +152,11 @@ const Support = () => {
           >
             <motion.div className="relative z-10">
               <Image
-                src="/support/support1.jpg"
+                src="/support/finance.jpg"
                 alt="Support 1"
                 width={140}
                 height={140}
-                className="rounded-[23px] drop-shadow-lg sm:w-[180px] sm:h-[180px]"
+                className="object-cover rounded-[23px] drop-shadow-lg sm:w-[180px] sm:h-[180px]"
               />
             </motion.div>
 
@@ -184,11 +167,11 @@ const Support = () => {
               style={{ transform: "rotate(-5deg)" }}
             >
               <Image
-                src="/support/support2.jpg"
+                src="/support/business.jpg"
                 alt="Support 2"
                 width={140}
                 height={140}
-                className="rounded-[23px] drop-shadow-xl cursor-pointer sm:w-[180px] sm:h-[180px]"
+                className="object-cover rounded-[23px] drop-shadow-xl cursor-pointer sm:w-[180px] sm:h-[180px] shadow-lg"
               />
               <AnimatePresence>
                 {hoveredImage === "support2" && (
@@ -198,7 +181,7 @@ const Support = () => {
                       backgroundColor: "#0080FF",
                       top: "-65px",
                       left: "50%",
-                      transform: "translateX(-50%) rotate(5deg)",
+                      transform: " translateX(-50%) rotate(5deg)",
                     }}
                     initial={{ opacity: 0, y: 10, scale: 0.8 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -208,7 +191,7 @@ const Support = () => {
                       ease: "easeOut",
                     }}
                   >
-                    Hey, It's me!
+                    Finance & Insurance
                     <div
                       className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0"
                       style={{
@@ -224,7 +207,7 @@ const Support = () => {
 
             <motion.div className="relative z-15 sm:-ml-10 sm:mt-4">
               <Image
-                src="/support/support3.jpg"
+                src="/support/legal.jpg"
                 alt="Support 3"
                 width={140}
                 height={140}
@@ -310,7 +293,7 @@ const Support = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 sm:gap-5 my-6 sm:my-10 w-full max-w-6xl px-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 my-6 sm:my-10 w-full max-w-4xl px-4"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.8 }}
@@ -318,7 +301,7 @@ const Support = () => {
           {supportCards.map((card, index) => (
             <motion.div
               key={index}
-              className="w-full sm:w-80 bg-[#080808] border border-[#191919] border p-4 rounded-[16px] border-t-0 relative"
+              className="w-full bg-[#080808] border border-[#191919] border p-4 rounded-[16px] border-t-0 relative"
               variants={cardVariants}
               initial="hidden"
               animate="visible"

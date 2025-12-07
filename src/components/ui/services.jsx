@@ -107,7 +107,7 @@ export default function Services() {
             </Link>
           </motion.div>
         </div>
-        <div className="relative z-50 mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1170px] mx-auto">
+        <div className="relative z-50 mt-14 flex flex-wrap lg:flex-row md:gap-4 max-w-[1190px] mx-auto justify-center items-center px-5">
           {/* Cards */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
