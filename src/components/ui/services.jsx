@@ -38,19 +38,6 @@ export default function Services() {
         </div>
         <div className="relative z-50 max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
           {/* Services Badge */}
-          {/* <button className="button mb-6">
-            <div className="dots_border"></div>
-            <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
-              <Image
-                src="/icons/settings.png"
-                alt="settings"
-                width={14}
-                height={14}
-                className="mr-0.2"
-              />
-            </div>
-            <span className="text_button">Services</span>
-          </button> */}
           <TagSections
             img={
               <Image
@@ -119,13 +106,13 @@ export default function Services() {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "456px",
-              width: "370px",
+              width: "330px",
             }}
-            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
+            className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6  hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
-            <div className="flex flex-col">
-              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+            <div className="flex flex-col w-[100%]">
+              <div className="flex flex-row items-start justify-between w-[100%] ">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
                   <Image
                     src="/services/ai-integration.svg"
@@ -144,10 +131,10 @@ export default function Services() {
                   />
                 </div>
               </div>
-              <h3 className="text-white text-md font-medium pl-12">
+              <h3 className="text-white text-md font-medium ">
                 AI Integration & Intelligent Solutions
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+              <p className="text-gray-400 text-sm leading-relaxed ">
                 Empower Your Teams With Intelligence.
               </p>
             </div>
@@ -162,7 +149,7 @@ export default function Services() {
               }}
             />
             {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Your teams waste time on slow processes — we integrate
               intelligence that eliminates friction.
             </p>
@@ -177,9 +164,14 @@ export default function Services() {
             >
               <Image
                 src="/services/digital-service.jpg"
-                alt="bg Icon"
-                width={400}
-                height={200}
+                alt="AI Integration Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
                 className="object-cover rounded-xl"
               />
             </div>
@@ -194,13 +186,13 @@ export default function Services() {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "456px",
-              width: "370px",
+              width: "330px",
             }}
             className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
-            <div className="flex flex-col">
-              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+            <div className="flex flex-col w-[100%]">
+              <div className="flex flex-row items-start justify-between">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
                   <Image
                     src="/services/chatbot.svg"
@@ -219,10 +211,10 @@ export default function Services() {
                   />
                 </div>
               </div>
-              <h3 className="text-white text-md font-medium pl-12">
+              <h3 className="text-white text-md font-medium">
                 Chatbots & Autonomous Agents
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Support That Never Sleeps.
               </p>
             </div>
@@ -237,7 +229,7 @@ export default function Services() {
               }}
             />
             {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Your support is overwhelmed — our autonomous agents respond and
               execute continuously.
             </p>
@@ -252,9 +244,14 @@ export default function Services() {
             >
               <Image
                 src="/services/chatbot.jpg"
-                alt="bg Icon"
-                width={400}
-                height={200}
+                alt="Chatbot Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
                 className="object-cover rounded-xl"
               />
             </div>
@@ -269,13 +266,13 @@ export default function Services() {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "456px",
-              width: "370px",
+              width: "330px",
             }}
             className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
-            <div className="flex flex-col">
-              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+            <div className="flex flex-col w-[100%]">
+              <div className="flex flex-row items-start justify-between w-[100%]">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
                   <Image
                     src="/services/data.svg"
@@ -294,10 +291,10 @@ export default function Services() {
                   />
                 </div>
               </div>
-              <h3 className="text-white text-md font-medium pl-12">
+              <h3 className="text-white text-md font-medium">
                 Data Governance & Quality
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Transform Chaos Into Clarity.
               </p>
             </div>
@@ -312,7 +309,7 @@ export default function Services() {
               }}
             />
             {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Your data is scattered — we eliminate chaos and secure your
               decisions.
             </p>
@@ -327,9 +324,14 @@ export default function Services() {
             >
               <Image
                 src="/services/data.jpg"
-                alt="bg Icon"
-                width={400}
-                height={200}
+                alt="Data Governance Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
                 className="object-cover rounded-xl"
               />
             </div>
@@ -344,13 +346,13 @@ export default function Services() {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "456px",
-              width: "370px",
+              width: "330px",
             }}
             className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
-            <div className="flex flex-col">
-              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+            <div className="flex flex-col w-[100%]">
+              <div className="flex flex-row items-start justify-between w-[100%]">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
                   <Image
                     src="/services/engineering.svg"
@@ -369,10 +371,10 @@ export default function Services() {
                   />
                 </div>
               </div>
-              <h3 className="text-white text-md font-medium pl-12">
+              <h3 className="text-white text-md font-medium">
                 Digital Platforms & Product Engineering
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Build Tools That Drive Growth.
               </p>
             </div>
@@ -387,7 +389,7 @@ export default function Services() {
               }}
             />
             {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Your tools limit your growth — we create modern and
               high-performing platforms.
             </p>
@@ -402,9 +404,14 @@ export default function Services() {
             >
               <Image
                 src="/services/platform.jpg"
-                alt="bg Icon"
-                width={400}
-                height={200}
+                alt="Digital Platform Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
                 className="object-cover rounded-xl"
               />
             </div>
@@ -419,13 +426,13 @@ export default function Services() {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "456px",
-              width: "370px",
+              width: "330px",
             }}
             className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
-            <div className="flex flex-col">
-              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+            <div className="flex flex-col w-[100%]">
+              <div className="flex flex-row items-start justify-between w-[100%]">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
                   <Image
                     src="/services/infrastructure.svg"
@@ -444,10 +451,10 @@ export default function Services() {
                   />
                 </div>
               </div>
-              <h3 className="text-white text-md font-medium pl-12">
+              <h3 className="text-white text-md font-medium">
                 Cloud & Scalable Infrastructure
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+              <p className="text-gray-400 text-sm leading-relaxed ">
                 Foundation Built For Scale.
               </p>
             </div>
@@ -462,7 +469,7 @@ export default function Services() {
               }}
             />
             {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Your infrastructure isn't stable — we build a fast and secure
               foundation.
             </p>
@@ -477,9 +484,14 @@ export default function Services() {
             >
               <Image
                 src="/services/cloude.jpg"
-                alt="bg Icon"
-                width={400}
-                height={200}
+                alt="Cloud Infrastructure Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
                 className="object-cover rounded-xl"
               />
             </div>
@@ -494,15 +506,15 @@ export default function Services() {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "456px",
-              width: "370px",
+              width: "330px",
             }}
             className="flex flex-col  items-center justify-between border border-gray-700/50 rounded-2xl p-6 w-80 hover:border-purple-500/50 transition-all duration-300"
           >
             {/* Icon */}
-            <div className="flex flex-col">
-              <div className="flex flex-row items-start justify-between w-100 pl-12 pr-12">
+            <div className="flex flex-col w-[100%]">
+              <div className="flex flex-row items-start justify-between w-[100%]">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center mb-6">
-                 <Image
+                  <Image
                     src="/services/support.svg"
                     alt="AI Integration"
                     width={24}
@@ -519,10 +531,10 @@ export default function Services() {
                   />
                 </div>
               </div>
-              <h3 className="text-white text-md font-medium pl-12">
+              <h3 className="text-white text-md font-medium">
                 24/7 Support & Outsourcing
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed pl-12">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Expert Teams, Always Available.
               </p>
             </div>
@@ -537,7 +549,7 @@ export default function Services() {
               }}
             />
             {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 pl-2">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               You lack resources — we support you continuously with the right
               experts.
             </p>
@@ -552,9 +564,14 @@ export default function Services() {
             >
               <Image
                 src="/services/support.jpg"
-                alt="bg Icon"
-                width={400}
-                height={200}
+                alt="Support Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
                 className="object-cover rounded-xl"
               />
             </div>

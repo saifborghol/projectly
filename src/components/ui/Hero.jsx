@@ -20,48 +20,27 @@ export default function Hero() {
       <section
         id="home"
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
+        style={{
+          backgroundImage: "url('/background/bg-hero.png')",
+          backgroundPosition: "center 100%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "90%",
+        }}
       >
+        {/* Gradient overlay for smooth fade at bottom */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.8) 85%, rgb(0, 0, 0) 100%)",
+          }}
+        />
+
         {/* Animated gradient orbs */}
         <GradientOrbs />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Badge */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 mt-14"
-          >
-            <div
-              className="inline-flex items-center rounded-[40px]"
-              style={{
-                height: "40px",
-                paddingTop: "6px",
-                paddingRight: "16px",
-                paddingBottom: "6px",
-                paddingLeft: "6px",
-                gap: "14px",
-                background:
-                  "linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%)",
-                backdropFilter: "blur(0px)",
-                border: "2px solid rgba(104, 104, 104, 0.15)",
-              }}
-            >
-              <span
-                className="text-white px-4 py-1 rounded-full text-sm font-bold flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(180deg, #4F1AD6 0%, #8059E3 100%)",
-                  border: "2px ",
-                }}
-              >
-                2025
-              </span>
-              <span className="text-gray-300 text-sm font-light">
-                Next-Gen IT Agency
-              </span>
-            </div>
-          </motion.div> */}
           <TagSections
             img={
               <span
@@ -134,7 +113,7 @@ export default function Hero() {
               style={{
                 backdropFilter: "blur(16px) saturate(180%)",
                 WebkitBackdropFilter: "blur(16px) saturate(180%)",
-                backgroundColor: "rgba(238, 244, 255, 0.30)",
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
                 borderRadius: "8px",
               }}
             >

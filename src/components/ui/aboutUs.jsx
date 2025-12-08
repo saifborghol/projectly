@@ -15,27 +15,6 @@ export default function AboutUs() {
     >
       <div className="max-w-6xl mx-auto text-center">
         {/* Badge */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 flex justify-center"
-        >
-          <div className="relative group">
-            <button className="button">
-              <div className="dots_border"></div>
-              <div className="z-10 w-6.5 h-6.5 rounded-full border-2 border-white/30 bg-gradient-to-br from-[#4F1AD6] to-[#8059E3] flex items-center justify-center">
-                <Image
-                  src="/icons/finger-print.png"
-                  alt="Finger Print"
-                  width={18}
-                  height={18}
-                />
-              </div>
-              <span className="text_button">About Us</span>
-            </button>
-          </div>
-        </motion.div> */}
         <TagSections
           img={
             <Image
