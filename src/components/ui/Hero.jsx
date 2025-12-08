@@ -22,7 +22,7 @@ export default function Hero() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
         style={{
           backgroundImage: "url('/background/bg-hero.png')",
-          backgroundPosition: "center 100%",
+          backgroundPosition: "center 130%",
           backgroundRepeat: "no-repeat",
           backgroundSize: "90%",
         }}

@@ -328,16 +328,14 @@ const RadialSwiper = () => {
           />
           {/* Main heading */}
           <h1 className="text-6xl md:text-7xl font-medium text-white mb-6 tracking-tight text-center pointer-events-none">
-            Built on Intelligence
+            Build for Impact
           </h1>
 
           {/* Subtitle */}
           <p className="text-l text-gray-400 mb-12 text-center max-w-md leading-relaxed pointer-events-none">
-            We engineer technology with purpose — smart, optimized, and driven
-            by data.
+            Delivering cutting-edge functionality through
             <br />
-            Your company benefits from precision, clarity, and intelligent
-            execution.
+            intelligent digital design.
           </p>
 
           <motion.div
@@ -429,7 +427,7 @@ const RadialSwiper = () => {
             </p>
 
             {/* Visual Element */}
-            <div
+            {/* <div
               style={{
                 height: "233px",
                 width: "100%",
@@ -439,10 +437,30 @@ const RadialSwiper = () => {
               className="rounded-xl p-4 h-32 flex items-center justify-center"
             >
               <Image
-                src="/background/bg-block-card-1.png"
+                src="/background/bg-block-card-1.jpg"
                 alt="bg Icon"
                 width={310}
                 height={300}
+              />
+            </div> */}
+            <div
+              style={{
+                height: "233px",
+                width: "100%",
+              }}
+              className="w-[310px] h-[233px]  flex items-center justify-center overflow-hidden rounded-xl"
+            >
+              <Image
+                src="/background/bg-block-card-1.jpg"
+                alt="AI Integration Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
+                className="object-cover rounded-xl"
               />
             </div>
           </motion.div>
@@ -508,101 +526,20 @@ const RadialSwiper = () => {
               style={{
                 height: "233px",
                 width: "100%",
-                background:
-                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f, #300a5c)",
               }}
-              className="rounded-xl p-4 h-32 flex items-center justify-center relative overflow-hidden"
+              className="w-[310px] h-[233px]  flex items-center justify-center overflow-hidden rounded-xl"
             >
-              {/* Floating text elements */}
-              <div
-                style={{
-                  position: "relative",
-                  opacity: 0.9,
-                  width: "100%",
-                }}
-                className="w-full"
-              >
-                <Splide options={options} aria-label="features carousel">
-                  <SplideTrack>
-                    {texts.map((txt, idx) => (
-                      <SplideSlide
-                        key={`${txt}-${idx}`}
-                        className="flex items-center justify-center"
-                      >
-                        <div
-                          className="px-3 py-4 rounded-md select-none"
-                          style={{
-                            width: "100%",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <p className="text-white text-sm md:text-base font-medium text-center">
-                            {txt}
-                          </p>
-                        </div>
-                      </SplideSlide>
-                    ))}
-                  </SplideTrack>
-                </Splide>
-                <Splide options={options} aria-label="features carousel">
-                  <SplideTrack>
-                    {texts.map((txt, idx) => (
-                      <SplideSlide
-                        key={`${txt}-${idx}`}
-                        className="flex items-center justify-center"
-                      >
-                        <div
-                          className="px-3 py-4 rounded-md select-none"
-                          style={{
-                            width: "100%",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <p className="text-white text-sm md:text-base font-medium text-center">
-                            {txt}
-                          </p>
-                        </div>
-                      </SplideSlide>
-                    ))}
-                  </SplideTrack>
-                </Splide>
-                <Splide options={options} aria-label="features carousel">
-                  <SplideTrack>
-                    {texts.map((txt, idx) => (
-                      <SplideSlide
-                        key={`${txt}-${idx}`}
-                        className="flex items-center justify-center"
-                      >
-                        <div
-                          className="px-3 py-4 rounded-md select-none"
-                          style={{
-                            width: "100%",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <p className="text-white text-sm md:text-base font-medium text-center">
-                            {txt}
-                          </p>
-                        </div>
-                      </SplideSlide>
-                    ))}
-                  </SplideTrack>
-                </Splide>
-              </div>
-              {/* Main icon */}
               <Image
-                src="/background/bg-block-card-2.png"
-                alt="bg Icon"
-                width={74}
-                height={74}
-                className="relative z-10"
-                style={{ position: "absolute" }}
+                src="/background/bg-block-card-2.jpg"
+                alt="AI Integration Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
+                className="object-cover rounded-xl"
               />
             </div>
           </motion.div>
@@ -668,23 +605,20 @@ const RadialSwiper = () => {
               style={{
                 height: "233px",
                 width: "100%",
-                background:
-                  "linear-gradient(to top, #080111, #130424, #19052f, #19052f, #19052f, #300a5c)",
               }}
-              className="rounded-xl p-4 h-32 flex flex-col items-center justify-center"
+              className="w-[310px] h-[233px]  flex items-center justify-center overflow-hidden rounded-xl"
             >
               <Image
-                src="/background/bg-block-card-3-1.png"
-                alt="bg Icon"
-                width={90}
-                height={74}
-                className="mb-4"
-              />
-              <Image
-                src="/background/bg-block-card-3.png"
-                alt="bg Icon"
-                width={200}
-                height={74}
+                src="/background/bg-block-card-3.jpg"
+                alt="AI Integration Service"
+                width={310}
+                height={158}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA2gA8/9k="
+                sizes="(max-width: 768px) 100vw, 310px"
+                className="object-cover rounded-xl"
               />
             </div>
           </motion.div>

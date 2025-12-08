@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 import { smoothScrollTo } from "@/lib/smoothScroll";
 
 export default function Navbar(navItems) {
-  console.log("🚀 ~ Navbar ~ navItems:", navItems.navItems)
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 

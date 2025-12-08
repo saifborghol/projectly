@@ -29,18 +29,16 @@ export default function AboutUs() {
         />
         {/* Main Heading with ScrollReveal */}
         <ScrollReveal
-          baseOpacity={0.15}
+          baseOpacity={0.2}
           enableBlur={true}
-          blurStrength={3}
-          baseRotation={2}
-          rotationEnd="bottom bottom"
-          wordAnimationEnd="bottom bottom"
+          blurStrength={8}
+          baseRotation={0}
+          animationDuration={2}
+          staggerDelay={0.05}
           containerClassName="mb-12"
-          textClassName="text-2xl md:text-4xl font-light text-white leading-relaxed max-w-4xl mx-auto text-justify mr-10 ml-10"
+          textClassName="text-2xl md:text-4xl font-light text-white leading-relaxed max-w-4xl mx-auto text-center px-4"
         >
-          Driven by innovation, powered by precision — Projectly is a team of
-          tech visionaries crafting intelligent digital solutions that shape the
-          future...
+          Driven by innovation, powered by precision — Projectly is a team of tech visionaries crafting intelligent digital solutions that shape the future
         </ScrollReveal>
 
         {/* CTA Button */}

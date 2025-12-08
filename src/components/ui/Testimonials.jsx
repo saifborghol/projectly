@@ -27,14 +27,16 @@ const Testimonials = () => {
         <div className="absolute top-0 left-0 w-full h-full">
           <LightRays
             raysOrigin="top-center"
-            raysColor="#7323a9"
-            raysSpeed={1.5}
-            lightSpread={0.8}
-            rayLength={1.2}
+            raysColor="#5534b2"
+            raysSpeed={0.5}
+            lightSpread={1.1}
+            rayLength={3}
+            fadeDistance={1.8}
             followMouse={true}
+            saturation={2}
             mouseInfluence={0.1}
-            noiseAmount={0.1}
-            distortion={0.05}
+            noiseAmount={0}
+            distortion={0}
             className="custom-rays"
           />
         </div>
